@@ -1,0 +1,2340 @@
+{
+  "name" : "Binary Security Quality Model",
+  "additionalData" : { },
+  "factors" : {
+    "tqi" : {
+      "Binary Security Quality" : {
+        "description" : "A measure of how secure a binary is relevant to benchmarked binaries from stakeholder perspective."
+      }
+    },
+    "quality_aspects" : {
+      "Confidentiality" : {
+        "description" : "Information is not made available or disclosed to unauthorized individuals, entities, or processes."
+      },
+      "Integrity" : {
+        "description" : "Data or processes cannot be modified in an unauthorized way."
+      },
+      "Availability" : {
+        "description" : "Data and processes should be available at all times when deemed necessary."
+      },
+      "Authenticity" : {
+        "description" : "Identity of individuals, entities, or processes is verified correctly."
+      },
+      "Authorization" : {
+        "description" : "individuals, entities, or processes only have access to data and processes they should."
+      },
+      "Non-repudiation" : {
+        "description" : "Individuals, entities, or processes may not deny any actions they performed."
+      }
+    },
+    "product_factors" : {
+      "CWE-190" : {
+        "description" : "Integer Overflow or Wraparound",
+        "children" : {
+          "CWE-190 instance" : { }
+        }
+      },
+      "CWE-215" : {
+        "description" : "Insertion of Sensitive Information Into Debugging Code",
+        "children" : {
+          "CWE-215 instance" : { }
+        }
+      },
+      "CWE-243" : {
+        "description" : "Creation of chroot Jail Without Changing Working Directory",
+        "children" : {
+          "CWE-243 instance" : { }
+        }
+      },
+      "CWE-332" : {
+        "description" : "Insufficient Entropy in PRNG",
+        "children" : {
+          "CWE-332 instance" : { }
+        }
+      },
+      "CWE-367" : {
+        "description" : "Time-of-check Time-of-use (TOCTOU) Race Condition",
+        "children" : {
+          "CWE-367 instance" : { }
+        }
+      },
+      "CWE-415" : {
+        "description" : "Double Free",
+        "children" : {
+          "CWE-415 instance" : { }
+        }
+      },
+      "CWE-416" : {
+        "description" : "Use After Free",
+        "children" : {
+          "CWE-416 instance" : { }
+        }
+      },
+      "CWE-426" : {
+        "description" : "Untrusted Search Path",
+        "children" : {
+          "CWE-426 instance" : { }
+        }
+      },
+      "CWE-467" : {
+        "description" : "Use of sizeof() on a Pointer Type",
+        "children" : {
+          "CWE-467 instance" : { }
+        }
+      },
+      "CWE-560" : {
+        "description" : "Use of umask() with chmod-style Argument",
+        "children" : {
+          "CWE-560 instance" : { }
+        }
+      },
+      "CWE-676" : {
+        "description" : "Use of Potentially Dangerous Function",
+        "children" : {
+          "CWE-676 instance" : { }
+        }
+      },
+      "CWE-782" : {
+        "description" : "Exposed IOCTL with Insufficient Access Control",
+        "children" : {
+          "CWE-782 instance" : { }
+        }
+      },
+      "CWE-20" : {
+        "description" : "Improper Input Validation",
+        "children" : {
+          "CWE-20 instance" : { }
+        }
+      },
+      "CWE-22" : {
+        "description" : "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "children" : {
+          "CWE-22 instance" : { }
+        }
+      },
+      "CWE-59" : {
+        "description" : "Improper Link Resolution Before File Access ('Link Following')",
+        "children" : {
+          "CWE-59 instance" : { }
+        }
+      },
+      "CWE-74" : {
+        "description" : "Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')",
+        "children" : {
+          "CWE-74 instance" : { }
+        }
+      },
+      "CWE-77" : {
+        "description" : "Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+        "children" : {
+          "CWE-77 instance" : { }
+        }
+      },
+      "CWE-78" : {
+        "description" : "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+        "children" : {
+          "CWE-78 instance" : { }
+        }
+      },
+      "CWE-79" : {
+        "description" : "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "children" : {
+          "CWE-79 instance" : { }
+        }
+      },
+      "CWE-88" : {
+        "description" : "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')",
+        "children" : {
+          "CWE-88 instance" : { }
+        }
+      },
+      "CWE-89" : {
+        "description" : "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+        "children" : {
+          "CWE-89 instance" : { }
+        }
+      },
+      "CWE-91" : {
+        "description" : "XML Injection (aka Blind XPath Injection)",
+        "children" : {
+          "CWE-91 instance" : { }
+        }
+      },
+      "CWE-94" : {
+        "description" : "Improper Control of Generation of Code ('Code Injection')",
+        "children" : {
+          "CWE-94 instance" : { }
+        }
+      },
+      "CWE-116" : {
+        "description" : "Improper Encoding or Escaping of Output",
+        "children" : {
+          "CWE-116 instance" : { }
+        }
+      },
+      "CWE-119" : {
+        "description" : "Improper Restriction of Operations within the Bounds of a Memory Buffer",
+        "children" : {
+          "CWE-119 instance" : { }
+        }
+      },
+      "CWE-120" : {
+        "description" : "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+        "children" : {
+          "CWE-120 instance" : { }
+        }
+      },
+      "CWE-125" : {
+        "description" : "Out-of-bounds Read",
+        "children" : {
+          "CWE-125 instance" : { }
+        }
+      },
+      "CWE-129" : {
+        "description" : "Improper Validation of Array Index",
+        "children" : {
+          "CWE-129 instance" : { }
+        }
+      },
+      "CWE-131" : {
+        "description" : "Incorrect Calculation of Buffer Size",
+        "children" : {
+          "CWE-131 instance" : { }
+        }
+      },
+      "CWE-134" : {
+        "description" : "Use of Externally-Controlled Format String",
+        "children" : {
+          "CWE-134 instance" : { }
+        }
+      },
+      "CWE-178" : {
+        "description" : "Improper Handling of Case Sensitivity",
+        "children" : {
+          "CWE-178 instance" : { }
+        }
+      },
+      "CWE-191" : {
+        "description" : "Integer Underflow (Wrap or Wraparound)",
+        "children" : {
+          "CWE-191 instance" : { }
+        }
+      },
+      "CWE-193" : {
+        "description" : "Off-by-one Error",
+        "children" : {
+          "CWE-193 instance" : { }
+        }
+      },
+      "CWE-200" : {
+        "description" : "Exposure of Sensitive Information to an Unauthorized Actor",
+        "children" : {
+          "CWE-200 instance" : { }
+        }
+      },
+      "CWE-203" : {
+        "description" : "Observable Discrepancy",
+        "children" : {
+          "CWE-203 instance" : { }
+        }
+      },
+      "CWE-209" : {
+        "description" : "Generation of Error Message Containing Sensitive Information",
+        "children" : {
+          "CWE-209 instance" : { }
+        }
+      },
+      "CWE-212" : {
+        "description" : "Improper Removal of Sensitive Information Before Storage or Transfer",
+        "children" : {
+          "CWE-212 instance" : { }
+        }
+      },
+      "CWE-252" : {
+        "description" : "Unchecked Return Value",
+        "children" : {
+          "CWE-252 instance" : { }
+        }
+      },
+      "CWE-269" : {
+        "description" : "Improper Privilege Management",
+        "children" : {
+          "CWE-269 instance" : { }
+        }
+      },
+      "CWE-273" : {
+        "description" : "Improper Check for Dropped Privileges",
+        "children" : {
+          "CWE-273 instance" : { }
+        }
+      },
+      "CWE-276" : {
+        "description" : "Incorrect Default Permissions",
+        "children" : {
+          "CWE-276 instance" : { }
+        }
+      },
+      "CWE-281" : {
+        "description" : "Improper Preservation of Permissions",
+        "children" : {
+          "CWE-281 instance" : { }
+        }
+      },
+      "CWE-287" : {
+        "description" : "Improper Authentication",
+        "children" : {
+          "CWE-287 instance" : { }
+        }
+      },
+      "CWE-290" : {
+        "description" : "Authentication Bypass by Spoofing",
+        "children" : {
+          "CWE-290 instance" : { }
+        }
+      },
+      "CWE-294" : {
+        "description" : "Authentication Bypass by Capture-replay",
+        "children" : {
+          "CWE-294 instance" : { }
+        }
+      },
+      "CWE-295" : {
+        "description" : "Improper Certificate Validation",
+        "children" : {
+          "CWE-295 instance" : { }
+        }
+      },
+      "CWE-306" : {
+        "description" : "Missing Authentication for Critical Function",
+        "children" : {
+          "CWE-306 instance" : { }
+        }
+      },
+      "CWE-307" : {
+        "description" : "Improper Restriction of Excessive Authentication Attempts",
+        "children" : {
+          "CWE-307 instance" : { }
+        }
+      },
+      "CWE-311" : {
+        "description" : "Missing Encryption of Sensitive Data",
+        "children" : {
+          "CWE-311 instance" : { }
+        }
+      },
+      "CWE-312" : {
+        "description" : "Cleartext Storage of Sensitive Information",
+        "children" : {
+          "CWE-312 instance" : { }
+        }
+      },
+      "CWE-319" : {
+        "description" : "Cleartext Transmission of Sensitive Information",
+        "children" : {
+          "CWE-319 instance" : { }
+        }
+      },
+      "CWE-326" : {
+        "description" : "Inadequate Encryption Strength",
+        "children" : {
+          "CWE-326 instance" : { }
+        }
+      },
+      "CWE-327" : {
+        "description" : "Use of a Broken or Risky Cryptographic Algorithm",
+        "children" : {
+          "CWE-327 instance" : { }
+        }
+      },
+      "CWE-330" : {
+        "description" : "Use of Insufficiently Random Values",
+        "children" : {
+          "CWE-330 instance" : { }
+        }
+      },
+      "CWE-331" : {
+        "description" : "Insufficient Entropy",
+        "children" : {
+          "CWE-331 instance" : { }
+        }
+      },
+      "CWE-335" : {
+        "description" : "Incorrect Usage of Seeds in Pseudo-Random Number Generator (PRNG)",
+        "children" : {
+          "CWE-335 instance" : { }
+        }
+      },
+      "CWE-338" : {
+        "description" : "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)",
+        "children" : {
+          "CWE-338 instance" : { }
+        }
+      },
+      "CWE-345" : {
+        "description" : "Insufficient Verification of Data Authenticity",
+        "children" : {
+          "CWE-345 instance" : { }
+        }
+      },
+      "CWE-346" : {
+        "description" : "Origin Validation Error",
+        "children" : {
+          "CWE-346 instance" : { }
+        }
+      },
+      "CWE-347" : {
+        "description" : "Improper Verification of Cryptographic Signature",
+        "children" : {
+          "CWE-347 instance" : { }
+        }
+      },
+      "CWE-352" : {
+        "description" : "Cross-Site Request Forgery (CSRF)",
+        "children" : {
+          "CWE-352 instance" : { }
+        }
+      },
+      "CWE-354" : {
+        "description" : "Improper Validation of Integrity Check Value",
+        "children" : {
+          "CWE-354 instance" : { }
+        }
+      },
+      "CWE-362" : {
+        "description" : "Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')",
+        "children" : {
+          "CWE-362 instance" : { }
+        }
+      },
+      "CWE-369" : {
+        "description" : "Divide By Zero",
+        "children" : {
+          "CWE-369 instance" : { }
+        }
+      },
+      "CWE-384" : {
+        "description" : "Session Fixation",
+        "children" : {
+          "CWE-384 instance" : { }
+        }
+      },
+      "CWE-400" : {
+        "description" : "Uncontrolled Resource Consumption",
+        "children" : {
+          "CWE-400 instance" : { }
+        }
+      },
+      "CWE-401" : {
+        "description" : "Missing Release of Memory after Effective Lifetime",
+        "children" : {
+          "CWE-401 instance" : { }
+        }
+      },
+      "CWE-404" : {
+        "description" : "Improper Resource Shutdown or Release",
+        "children" : {
+          "CWE-404 instance" : { }
+        }
+      },
+      "CWE-425" : {
+        "description" : "Direct Request ('Forced Browsing')",
+        "children" : {
+          "CWE-425 instance" : { }
+        }
+      },
+      "CWE-427" : {
+        "description" : "Uncontrolled Search Path Element",
+        "children" : {
+          "CWE-427 instance" : { }
+        }
+      },
+      "CWE-428" : {
+        "description" : "Unquoted Search Path or Element",
+        "children" : {
+          "CWE-428 instance" : { }
+        }
+      },
+      "CWE-434" : {
+        "description" : "Unrestricted Upload of File with Dangerous Type",
+        "children" : {
+          "CWE-434 instance" : { }
+        }
+      },
+      "CWE-436" : {
+        "description" : "Interpretation Conflict",
+        "children" : {
+          "CWE-436 instance" : { }
+        }
+      },
+      "CWE-444" : {
+        "description" : "Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')",
+        "children" : {
+          "CWE-444 instance" : { }
+        }
+      },
+      "CWE-459" : {
+        "description" : "Incomplete Cleanup",
+        "children" : {
+          "CWE-459 instance" : { }
+        }
+      },
+      "CWE-470" : {
+        "description" : "Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')",
+        "children" : {
+          "CWE-470 instance" : { }
+        }
+      },
+      "CWE-476" : {
+        "description" : "NULL Pointer Dereference",
+        "children" : {
+          "CWE-476 instance" : { }
+        }
+      },
+      "CWE-494" : {
+        "description" : "Download of Code Without Integrity Check",
+        "children" : {
+          "CWE-494 instance" : { }
+        }
+      },
+      "CWE-502" : {
+        "description" : "Deserialization of Untrusted Data",
+        "children" : {
+          "CWE-502 instance" : { }
+        }
+      },
+      "CWE-521" : {
+        "description" : "Weak Password Requirements",
+        "children" : {
+          "CWE-521 instance" : { }
+        }
+      },
+      "CWE-522" : {
+        "description" : "Insufficiently Protected Credentials",
+        "children" : {
+          "CWE-522 instance" : { }
+        }
+      },
+      "CWE-532" : {
+        "description" : "Insertion of Sensitive Information into Log File",
+        "children" : {
+          "CWE-532 instance" : { }
+        }
+      },
+      "CWE-552" : {
+        "description" : "Files or Directories Accessible to External Parties",
+        "children" : {
+          "CWE-552 instance" : { }
+        }
+      },
+      "CWE-565" : {
+        "description" : "Reliance on Cookies without Validation and Integrity Checking",
+        "children" : {
+          "CWE-565 instance" : { }
+        }
+      },
+      "CWE-601" : {
+        "description" : "URL Redirection to Untrusted Site ('Open Redirect')",
+        "children" : {
+          "CWE-601 instance" : { }
+        }
+      },
+      "CWE-610" : {
+        "description" : "Externally Controlled Reference to a Resource in Another Sphere",
+        "children" : {
+          "CWE-610 instance" : { }
+        }
+      },
+      "CWE-611" : {
+        "description" : "Improper Restriction of XML External Entity Reference",
+        "children" : {
+          "CWE-611 instance" : { }
+        }
+      },
+      "CWE-613" : {
+        "description" : "Insufficient Session Expiration",
+        "children" : {
+          "CWE-613 instance" : { }
+        }
+      },
+      "CWE-617" : {
+        "description" : "Reachable Assertion",
+        "children" : {
+          "CWE-617 instance" : { }
+        }
+      },
+      "CWE-639" : {
+        "description" : "Authorization Bypass Through User-Controlled Key",
+        "children" : {
+          "CWE-639 instance" : { }
+        }
+      },
+      "CWE-640" : {
+        "description" : "Weak Password Recovery Mechanism for Forgotten Password",
+        "children" : {
+          "CWE-640 instance" : { }
+        }
+      },
+      "CWE-662" : {
+        "description" : "Improper Synchronization",
+        "children" : {
+          "CWE-662 instance" : { }
+        }
+      },
+      "CWE-665" : {
+        "description" : "Improper Initialization",
+        "children" : {
+          "CWE-665 instance" : { }
+        }
+      },
+      "CWE-667" : {
+        "description" : "Improper Locking",
+        "children" : {
+          "CWE-667 instance" : { }
+        }
+      },
+      "CWE-668" : {
+        "description" : "Exposure of Resource to Wrong Sphere",
+        "children" : {
+          "CWE-668 instance" : { }
+        }
+      },
+      "CWE-669" : {
+        "description" : "Incorrect Resource Transfer Between Spheres",
+        "children" : {
+          "CWE-669 instance" : { }
+        }
+      },
+      "CWE-670" : {
+        "description" : "Always-Incorrect Control Flow Implementation",
+        "children" : {
+          "CWE-670 instance" : { }
+        }
+      },
+      "CWE-672" : {
+        "description" : "Operation on a Resource after Expiration or Release",
+        "children" : {
+          "CWE-672 instance" : { }
+        }
+      },
+      "CWE-674" : {
+        "description" : "Uncontrolled Recursion",
+        "children" : {
+          "CWE-674 instance" : { }
+        }
+      },
+      "CWE-681" : {
+        "description" : "Incorrect Conversion between Numeric Types",
+        "children" : {
+          "CWE-681 instance" : { }
+        }
+      },
+      "CWE-682" : {
+        "description" : "Incorrect Calculation",
+        "children" : {
+          "CWE-682 instance" : { }
+        }
+      },
+      "CWE-697" : {
+        "description" : "Incorrect Comparison",
+        "children" : {
+          "CWE-697 instance" : { }
+        }
+      },
+      "CWE-704" : {
+        "description" : "Incorrect Type Conversion or Cast",
+        "children" : {
+          "CWE-704 instance" : { }
+        }
+      },
+      "CWE-706" : {
+        "description" : "Use of Incorrectly-Resolved Name or Reference",
+        "children" : {
+          "CWE-706 instance" : { }
+        }
+      },
+      "CWE-732" : {
+        "description" : "Incorrect Permission Assignment for Critical Resource",
+        "children" : {
+          "CWE-732 instance" : { }
+        }
+      },
+      "CWE-754" : {
+        "description" : "Improper Check for Unusual or Exceptional Conditions",
+        "children" : {
+          "CWE-754 instance" : { }
+        }
+      },
+      "CWE-755" : {
+        "description" : "Improper Handling of Exceptional Conditions",
+        "children" : {
+          "CWE-755 instance" : { }
+        }
+      },
+      "CWE-763" : {
+        "description" : "Release of Invalid Pointer or Reference",
+        "children" : {
+          "CWE-763 instance" : { }
+        }
+      },
+      "CWE-770" : {
+        "description" : "Allocation of Resources Without Limits or Throttling",
+        "children" : {
+          "CWE-770 instance" : { }
+        }
+      },
+      "CWE-772" : {
+        "description" : "Missing Release of Resource after Effective Lifetime",
+        "children" : {
+          "CWE-772 instance" : { }
+        }
+      },
+      "CWE-776" : {
+        "description" : "Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')",
+        "children" : {
+          "CWE-776 instance" : { }
+        }
+      },
+      "CWE-787" : {
+        "description" : "Out-of-bounds Write",
+        "children" : {
+          "CWE-787 instance" : { }
+        }
+      },
+      "CWE-798" : {
+        "description" : "Use of Hard-coded Credentials",
+        "children" : {
+          "CWE-798 instance" : { }
+        }
+      },
+      "CWE-824" : {
+        "description" : "Access of Uninitialized Pointer",
+        "children" : {
+          "CWE-824 instance" : { }
+        }
+      },
+      "CWE-829" : {
+        "description" : "Inclusion of Functionality from Untrusted Control Sphere",
+        "children" : {
+          "CWE-829 instance" : { }
+        }
+      },
+      "CWE-834" : {
+        "description" : "Excessive Iteration",
+        "children" : {
+          "CWE-834 instance" : { }
+        }
+      },
+      "CWE-835" : {
+        "description" : "Loop with Unreachable Exit Condition ('Infinite Loop')",
+        "children" : {
+          "CWE-835 instance" : { }
+        }
+      },
+      "CWE-838" : {
+        "description" : "Inappropriate Encoding for Output Context",
+        "children" : {
+          "CWE-838 instance" : { }
+        }
+      },
+      "CWE-843" : {
+        "description" : "Access of Resource Using Incompatible Type ('Type Confusion')",
+        "children" : {
+          "CWE-843 instance" : { }
+        }
+      },
+      "CWE-862" : {
+        "description" : "Missing Authorization",
+        "children" : {
+          "CWE-862 instance" : { }
+        }
+      },
+      "CWE-863" : {
+        "description" : "Incorrect Authorization",
+        "children" : {
+          "CWE-863 instance" : { }
+        }
+      },
+      "CWE-908" : {
+        "description" : "Use of Uninitialized Resource",
+        "children" : {
+          "CWE-908 instance" : { }
+        }
+      },
+      "CWE-909" : {
+        "description" : "Missing Initialization of Resource",
+        "children" : {
+          "CWE-909 instance" : { }
+        }
+      },
+      "CWE-913" : {
+        "description" : "Improper Control of Dynamically-Managed Code Resources",
+        "children" : {
+          "CWE-913 instance" : { }
+        }
+      },
+      "CWE-915" : {
+        "description" : "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+        "children" : {
+          "CWE-915 instance" : { }
+        }
+      },
+      "CWE-916" : {
+        "description" : "Use of Password Hash With Insufficient Computational Effort",
+        "children" : {
+          "CWE-916 instance" : { }
+        }
+      },
+      "CWE-917" : {
+        "description" : "Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')",
+        "children" : {
+          "CWE-917 instance" : { }
+        }
+      },
+      "CWE-918" : {
+        "description" : "Server-Side Request Forgery (SSRF)",
+        "children" : {
+          "CWE-918 instance" : { }
+        }
+      },
+      "CWE-920" : {
+        "description" : "Improper Restriction of Power Consumption",
+        "children" : {
+          "CWE-920 instance" : { }
+        }
+      },
+      "CWE-922" : {
+        "description" : "Insecure Storage of Sensitive Information",
+        "children" : {
+          "CWE-922 instance" : { }
+        }
+      },
+      "CWE-924" : {
+        "description" : "Improper Enforcement of Message Integrity During Transmission in a Communication Channel",
+        "children" : {
+          "CWE-924 instance" : { }
+        }
+      },
+      "CWE-1021" : {
+        "description" : "Improper Restriction of Rendered UI Layers or Frames",
+        "children" : {
+          "CWE-1021 instance" : { }
+        }
+      },
+      "CWE-1188" : {
+        "description" : "Insecure Default Initialization of Resource",
+        "children" : {
+          "CWE-1188 instance" : { }
+        }
+      },
+      "CWE-1236" : {
+        "description" : "Improper Neutralization of Formula Elements in a CSV File",
+        "children" : {
+          "CWE-1236 instance" : { }
+        }
+      }
+    }
+  },
+  "measures" : {
+    "CWE-190 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-190" : { },
+        "CVE-CWE-190" : { }
+      }
+    },
+    "CWE-215 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-215" : { }
+      }
+    },
+    "CWE-243 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-243" : { }
+      }
+    },
+    "CWE-332 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-332" : { }
+      }
+    },
+    "CWE-367 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-367" : { },
+        "CVE-CWE-367" : { }
+      }
+    },
+    "CWE-415 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-415" : { },
+        "CVE-CWE-415" : { }
+      }
+    },
+    "CWE-416 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-416" : { },
+        "CVE-CWE-416" : { }
+      }
+    },
+    "CWE-426 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-426" : { },
+        "CVE-CWE-426" : { }
+      }
+    },
+    "CWE-467 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-467" : { }
+      }
+    },
+    "CWE-560 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-560" : { }
+      }
+    },
+    "CWE-676 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-676" : { }
+      }
+    },
+    "CWE-782 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CWE-CWE-782" : { }
+      }
+    },
+    "CWE-20 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-20" : { }
+      }
+    },
+    "CWE-22 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-22" : { }
+      }
+    },
+    "CWE-59 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-59" : { }
+      }
+    },
+    "CWE-74 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-74" : { }
+      }
+    },
+    "CWE-77 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-77" : { }
+      }
+    },
+    "CWE-78 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-78" : { }
+      }
+    },
+    "CWE-79 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-79" : { }
+      }
+    },
+    "CWE-88 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-88" : { }
+      }
+    },
+    "CWE-89 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-89" : { }
+      }
+    },
+    "CWE-91 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-91" : { }
+      }
+    },
+    "CWE-94 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-94" : { }
+      }
+    },
+    "CWE-116 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-116" : { }
+      }
+    },
+    "CWE-119 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-119" : { }
+      }
+    },
+    "CWE-120 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-120" : { }
+      }
+    },
+    "CWE-125 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-125" : { }
+      }
+    },
+    "CWE-129 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-129" : { }
+      }
+    },
+    "CWE-131 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-131" : { }
+      }
+    },
+    "CWE-134 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-134" : { }
+      }
+    },
+    "CWE-178 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-178" : { }
+      }
+    },
+    "CWE-191 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-191" : { }
+      }
+    },
+    "CWE-193 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-193" : { }
+      }
+    },
+    "CWE-200 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-200" : { }
+      }
+    },
+    "CWE-203 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-203" : { }
+      }
+    },
+    "CWE-209 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-209" : { }
+      }
+    },
+    "CWE-212 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-212" : { }
+      }
+    },
+    "CWE-252 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-252" : { }
+      }
+    },
+    "CWE-269 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-269" : { }
+      }
+    },
+    "CWE-273 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-273" : { }
+      }
+    },
+    "CWE-276 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-276" : { }
+      }
+    },
+    "CWE-281 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-281" : { }
+      }
+    },
+    "CWE-287 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-287" : { }
+      }
+    },
+    "CWE-290 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-290" : { }
+      }
+    },
+    "CWE-294 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-294" : { }
+      }
+    },
+    "CWE-295 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-295" : { }
+      }
+    },
+    "CWE-306 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-306" : { }
+      }
+    },
+    "CWE-307 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-307" : { }
+      }
+    },
+    "CWE-311 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-311" : { }
+      }
+    },
+    "CWE-312 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-312" : { }
+      }
+    },
+    "CWE-319 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-319" : { }
+      }
+    },
+    "CWE-326 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-326" : { }
+      }
+    },
+    "CWE-327 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-327" : { }
+      }
+    },
+    "CWE-330 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-330" : { }
+      }
+    },
+    "CWE-331 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-331" : { }
+      }
+    },
+    "CWE-335 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-335" : { }
+      }
+    },
+    "CWE-338 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-338" : { }
+      }
+    },
+    "CWE-345 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-345" : { }
+      }
+    },
+    "CWE-346 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-346" : { }
+      }
+    },
+    "CWE-347 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-347" : { }
+      }
+    },
+    "CWE-352 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-352" : { }
+      }
+    },
+    "CWE-354 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-354" : { }
+      }
+    },
+    "CWE-362 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-362" : { }
+      }
+    },
+    "CWE-369 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-369" : { }
+      }
+    },
+    "CWE-384 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-384" : { }
+      }
+    },
+    "CWE-400 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-400" : { }
+      }
+    },
+    "CWE-401 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-401" : { }
+      }
+    },
+    "CWE-404 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-404" : { }
+      }
+    },
+    "CWE-425 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-425" : { }
+      }
+    },
+    "CWE-427 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-427" : { }
+      }
+    },
+    "CWE-428 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-428" : { }
+      }
+    },
+    "CWE-434 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-434" : { }
+      }
+    },
+    "CWE-436 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-436" : { }
+      }
+    },
+    "CWE-444 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-444" : { }
+      }
+    },
+    "CWE-459 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-459" : { }
+      }
+    },
+    "CWE-470 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-470" : { }
+      }
+    },
+    "CWE-476 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-476" : { }
+      }
+    },
+    "CWE-494 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-494" : { }
+      }
+    },
+    "CWE-502 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-502" : { }
+      }
+    },
+    "CWE-521 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-521" : { }
+      }
+    },
+    "CWE-522 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-522" : { }
+      }
+    },
+    "CWE-532 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-532" : { }
+      }
+    },
+    "CWE-552 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-552" : { }
+      }
+    },
+    "CWE-565 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-565" : { }
+      }
+    },
+    "CWE-601 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-601" : { }
+      }
+    },
+    "CWE-610 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-610" : { }
+      }
+    },
+    "CWE-611 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-611" : { }
+      }
+    },
+    "CWE-613 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-613" : { }
+      }
+    },
+    "CWE-617 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-617" : { }
+      }
+    },
+    "CWE-639 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-639" : { }
+      }
+    },
+    "CWE-640 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-640" : { }
+      }
+    },
+    "CWE-662 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-662" : { }
+      }
+    },
+    "CWE-665 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-665" : { }
+      }
+    },
+    "CWE-667 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-667" : { }
+      }
+    },
+    "CWE-668 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-668" : { }
+      }
+    },
+    "CWE-669 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-669" : { }
+      }
+    },
+    "CWE-670 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-670" : { }
+      }
+    },
+    "CWE-672 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-672" : { }
+      }
+    },
+    "CWE-674 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-674" : { }
+      }
+    },
+    "CWE-681 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-681" : { }
+      }
+    },
+    "CWE-682 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-682" : { }
+      }
+    },
+    "CWE-697 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-697" : { }
+      }
+    },
+    "CWE-704 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-704" : { }
+      }
+    },
+    "CWE-706 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-706" : { }
+      }
+    },
+    "CWE-732 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-732" : { }
+      }
+    },
+    "CWE-754 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-754" : { }
+      }
+    },
+    "CWE-755 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-755" : { }
+      }
+    },
+    "CWE-763 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-763" : { }
+      }
+    },
+    "CWE-770 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-770" : { }
+      }
+    },
+    "CWE-772 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-772" : { }
+      }
+    },
+    "CWE-776 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-776" : { }
+      }
+    },
+    "CWE-787 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-787" : { }
+      }
+    },
+    "CWE-798 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-798" : { }
+      }
+    },
+    "CWE-824 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-824" : { }
+      }
+    },
+    "CWE-829 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-829" : { }
+      }
+    },
+    "CWE-834 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-834" : { }
+      }
+    },
+    "CWE-835 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-835" : { }
+      }
+    },
+    "CWE-838 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-838" : { }
+      }
+    },
+    "CWE-843 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-843" : { }
+      }
+    },
+    "CWE-862 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-862" : { }
+      }
+    },
+    "CWE-863 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-863" : { }
+      }
+    },
+    "CWE-908 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-908" : { }
+      }
+    },
+    "CWE-909 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-909" : { }
+      }
+    },
+    "CWE-913 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-913" : { }
+      }
+    },
+    "CWE-915 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-915" : { }
+      }
+    },
+    "CWE-916 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-916" : { }
+      }
+    },
+    "CWE-917 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-917" : { }
+      }
+    },
+    "CWE-918 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-918" : { }
+      }
+    },
+    "CWE-920 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-920" : { }
+      }
+    },
+    "CWE-922 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-922" : { }
+      }
+    },
+    "CWE-924 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-924" : { }
+      }
+    },
+    "CWE-1021 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-1021" : { }
+      }
+    },
+    "CWE-1188 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-1188" : { }
+      }
+    },
+    "CWE-1236 instance" : {
+      "description" : "This measure represents instances of a CWE, either CVE instances or non-CVE CWE instances.",
+      "positive" : false,
+      "children" : {
+        "CVE-CWE-1236" : { }
+      }
+    }
+  },
+  "diagnostics" : {
+    "CWE-CWE-190" : {
+      "description" : "A weakness of type CWE-190",
+      "toolName" : "cwe_checker"
+    },
+    "CVE-CWE-190" : {
+      "description" : "CVE findings of CWE-190",
+      "toolName" : "cve-bin-tool"
+    },
+    "CWE-CWE-215" : {
+      "description" : "A weakness of type CWE-215",
+      "toolName" : "cwe_checker"
+    },
+    "CWE-CWE-243" : {
+      "description" : "A weakness of type CWE-243",
+      "toolName" : "cwe_checker"
+    },
+    "CWE-CWE-332" : {
+      "description" : "A weakness of type CWE-332",
+      "toolName" : "cwe_checker"
+    },
+    "CWE-CWE-367" : {
+      "description" : "A weakness of type CWE-367",
+      "toolName" : "cwe_checker"
+    },
+    "CVE-CWE-367" : {
+      "description" : "CVE findings of CWE-367",
+      "toolName" : "cve-bin-tool"
+    },
+    "CWE-CWE-415" : {
+      "description" : "A weakness of type CWE-415",
+      "toolName" : "cwe_checker"
+    },
+    "CVE-CWE-415" : {
+      "description" : "CVE findings of CWE-415",
+      "toolName" : "cve-bin-tool"
+    },
+    "CWE-CWE-416" : {
+      "description" : "A weakness of type CWE-416",
+      "toolName" : "cwe_checker"
+    },
+    "CVE-CWE-416" : {
+      "description" : "CVE findings of CWE-416",
+      "toolName" : "cve-bin-tool"
+    },
+    "CWE-CWE-426" : {
+      "description" : "A weakness of type CWE-426",
+      "toolName" : "cwe_checker"
+    },
+    "CVE-CWE-426" : {
+      "description" : "CVE findings of CWE-426",
+      "toolName" : "cve-bin-tool"
+    },
+    "CWE-CWE-467" : {
+      "description" : "A weakness of type CWE-467",
+      "toolName" : "cwe_checker"
+    },
+    "CWE-CWE-560" : {
+      "description" : "A weakness of type CWE-560",
+      "toolName" : "cwe_checker"
+    },
+    "CWE-CWE-676" : {
+      "description" : "A weakness of type CWE-676",
+      "toolName" : "cwe_checker"
+    },
+    "CWE-CWE-782" : {
+      "description" : "A weakness of type CWE-782",
+      "toolName" : "cwe_checker"
+    },
+    "CVE-CWE-20" : {
+      "description" : "CVE findings of CWE-20",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-22" : {
+      "description" : "CVE findings of CWE-22",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-59" : {
+      "description" : "CVE findings of CWE-59",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-74" : {
+      "description" : "CVE findings of CWE-74",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-77" : {
+      "description" : "CVE findings of CWE-77",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-78" : {
+      "description" : "CVE findings of CWE-78",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-79" : {
+      "description" : "CVE findings of CWE-79",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-88" : {
+      "description" : "CVE findings of CWE-88",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-89" : {
+      "description" : "CVE findings of CWE-89",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-91" : {
+      "description" : "CVE findings of CWE-91",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-94" : {
+      "description" : "CVE findings of CWE-94",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-116" : {
+      "description" : "CVE findings of CWE-116",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-119" : {
+      "description" : "CVE findings of CWE-119",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-120" : {
+      "description" : "CVE findings of CWE-120",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-125" : {
+      "description" : "CVE findings of CWE-125",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-129" : {
+      "description" : "CVE findings of CWE-129",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-131" : {
+      "description" : "CVE findings of CWE-131",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-134" : {
+      "description" : "CVE findings of CWE-134",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-178" : {
+      "description" : "CVE findings of CWE-178",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-191" : {
+      "description" : "CVE findings of CWE-191",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-193" : {
+      "description" : "CVE findings of CWE-193",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-200" : {
+      "description" : "CVE findings of CWE-200",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-203" : {
+      "description" : "CVE findings of CWE-203",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-209" : {
+      "description" : "CVE findings of CWE-209",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-212" : {
+      "description" : "CVE findings of CWE-212",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-252" : {
+      "description" : "CVE findings of CWE-252",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-269" : {
+      "description" : "CVE findings of CWE-269",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-273" : {
+      "description" : "CVE findings of CWE-273",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-276" : {
+      "description" : "CVE findings of CWE-276",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-281" : {
+      "description" : "CVE findings of CWE-281",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-287" : {
+      "description" : "CVE findings of CWE-287",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-290" : {
+      "description" : "CVE findings of CWE-290",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-294" : {
+      "description" : "CVE findings of CWE-294",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-295" : {
+      "description" : "CVE findings of CWE-295",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-306" : {
+      "description" : "CVE findings of CWE-306",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-307" : {
+      "description" : "CVE findings of CWE-307",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-311" : {
+      "description" : "CVE findings of CWE-311",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-312" : {
+      "description" : "CVE findings of CWE-312",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-319" : {
+      "description" : "CVE findings of CWE-319",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-326" : {
+      "description" : "CVE findings of CWE-326",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-327" : {
+      "description" : "CVE findings of CWE-327",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-330" : {
+      "description" : "CVE findings of CWE-330",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-331" : {
+      "description" : "CVE findings of CWE-331",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-335" : {
+      "description" : "CVE findings of CWE-335",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-338" : {
+      "description" : "CVE findings of CWE-338",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-345" : {
+      "description" : "CVE findings of CWE-345",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-346" : {
+      "description" : "CVE findings of CWE-346",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-347" : {
+      "description" : "CVE findings of CWE-347",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-352" : {
+      "description" : "CVE findings of CWE-352",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-354" : {
+      "description" : "CVE findings of CWE-354",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-362" : {
+      "description" : "CVE findings of CWE-362",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-369" : {
+      "description" : "CVE findings of CWE-369",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-384" : {
+      "description" : "CVE findings of CWE-384",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-400" : {
+      "description" : "CVE findings of CWE-400",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-401" : {
+      "description" : "CVE findings of CWE-401",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-404" : {
+      "description" : "CVE findings of CWE-404",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-425" : {
+      "description" : "CVE findings of CWE-425",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-427" : {
+      "description" : "CVE findings of CWE-427",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-428" : {
+      "description" : "CVE findings of CWE-428",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-434" : {
+      "description" : "CVE findings of CWE-434",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-436" : {
+      "description" : "CVE findings of CWE-436",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-444" : {
+      "description" : "CVE findings of CWE-444",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-459" : {
+      "description" : "CVE findings of CWE-459",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-470" : {
+      "description" : "CVE findings of CWE-470",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-476" : {
+      "description" : "CVE findings of CWE-476",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-494" : {
+      "description" : "CVE findings of CWE-494",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-502" : {
+      "description" : "CVE findings of CWE-502",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-521" : {
+      "description" : "CVE findings of CWE-521",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-522" : {
+      "description" : "CVE findings of CWE-522",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-532" : {
+      "description" : "CVE findings of CWE-532",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-552" : {
+      "description" : "CVE findings of CWE-552",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-565" : {
+      "description" : "CVE findings of CWE-565",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-601" : {
+      "description" : "CVE findings of CWE-601",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-610" : {
+      "description" : "CVE findings of CWE-610",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-611" : {
+      "description" : "CVE findings of CWE-611",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-613" : {
+      "description" : "CVE findings of CWE-613",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-617" : {
+      "description" : "CVE findings of CWE-617",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-639" : {
+      "description" : "CVE findings of CWE-639",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-640" : {
+      "description" : "CVE findings of CWE-640",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-662" : {
+      "description" : "CVE findings of CWE-662",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-665" : {
+      "description" : "CVE findings of CWE-665",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-667" : {
+      "description" : "CVE findings of CWE-667",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-668" : {
+      "description" : "CVE findings of CWE-668",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-669" : {
+      "description" : "CVE findings of CWE-669",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-670" : {
+      "description" : "CVE findings of CWE-670",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-672" : {
+      "description" : "CVE findings of CWE-672",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-674" : {
+      "description" : "CVE findings of CWE-674",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-681" : {
+      "description" : "CVE findings of CWE-681",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-682" : {
+      "description" : "CVE findings of CWE-682",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-697" : {
+      "description" : "CVE findings of CWE-697",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-704" : {
+      "description" : "CVE findings of CWE-704",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-706" : {
+      "description" : "CVE findings of CWE-706",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-732" : {
+      "description" : "CVE findings of CWE-732",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-754" : {
+      "description" : "CVE findings of CWE-754",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-755" : {
+      "description" : "CVE findings of CWE-755",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-763" : {
+      "description" : "CVE findings of CWE-763",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-770" : {
+      "description" : "CVE findings of CWE-770",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-772" : {
+      "description" : "CVE findings of CWE-772",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-776" : {
+      "description" : "CVE findings of CWE-776",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-787" : {
+      "description" : "CVE findings of CWE-787",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-798" : {
+      "description" : "CVE findings of CWE-798",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-824" : {
+      "description" : "CVE findings of CWE-824",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-829" : {
+      "description" : "CVE findings of CWE-829",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-834" : {
+      "description" : "CVE findings of CWE-834",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-835" : {
+      "description" : "CVE findings of CWE-835",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-838" : {
+      "description" : "CVE findings of CWE-838",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-843" : {
+      "description" : "CVE findings of CWE-843",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-862" : {
+      "description" : "CVE findings of CWE-862",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-863" : {
+      "description" : "CVE findings of CWE-863",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-908" : {
+      "description" : "CVE findings of CWE-908",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-909" : {
+      "description" : "CVE findings of CWE-909",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-913" : {
+      "description" : "CVE findings of CWE-913",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-915" : {
+      "description" : "CVE findings of CWE-915",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-916" : {
+      "description" : "CVE findings of CWE-916",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-917" : {
+      "description" : "CVE findings of CWE-917",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-918" : {
+      "description" : "CVE findings of CWE-918",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-920" : {
+      "description" : "CVE findings of CWE-920",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-922" : {
+      "description" : "CVE findings of CWE-922",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-924" : {
+      "description" : "CVE findings of CWE-924",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-1021" : {
+      "description" : "CVE findings of CWE-1021",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-1188" : {
+      "description" : "CVE findings of CWE-1188",
+      "toolName" : "cve-bin-tool"
+    },
+    "CVE-CWE-1236" : {
+      "description" : "CVE findings of CWE-1236",
+      "toolName" : "cve-bin-tool"
+    }
+  }
+}
