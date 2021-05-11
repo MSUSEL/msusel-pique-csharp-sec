@@ -70,8 +70,8 @@ public class RoslynatorLoc extends RoslynatorTool implements ITool {
         }
 
         // Strings for CLI call
-        //String tool = getExecutable().toAbsolutePath().toString();
-        String tool = "C:/Users/Payton Harrison/Repository/msusel-pique-csharp/resources/bin/Roslynator.exe";
+        String tool = getExecutable().toAbsolutePath().toString();
+        //String tool = "C:/Users/Payton Harrison/Repository/msusel-pique-csharp/resources/bin/Roslynator.exe";
         String command = "loc";
         String msBuild = "--msbuild-path=" + this.msBuild.toString();
         String target = path.toString();
@@ -89,6 +89,13 @@ public class RoslynatorLoc extends RoslynatorTool implements ITool {
         ProcessBuilder pb = null;
         Process p = null;
         try {
+            System.out.println("tool: " + tool);
+            System.out.println("cmd: " + command);
+            System.out.println("ms: " + msBuild);
+            System.out.println("target: " + target);
+            System.out.println("output: " + output);
+//            System.exit(0);
+
             pb = new ProcessBuilder(tool, command, msBuild, target, ">", output);
             pb.redirectOutput(new File(output));
             p = pb.start();

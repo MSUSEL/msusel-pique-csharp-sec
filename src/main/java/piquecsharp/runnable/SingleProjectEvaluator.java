@@ -23,16 +23,24 @@
 package piquecsharp.runnable;
 
 import org.apache.commons.io.FilenameUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pique.model.Diagnostic;
 import pique.analysis.ITool;
 import pique.evaluation.Project;
 import pique.model.QualityModel;
 import pique.model.QualityModelImport;
+import tool.RoslynatorAnalyzer;
+import tool.RoslynatorLoc;
 import utilities.PiqueProperties;
 
+import java.io.*;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Behavioral class responsible for running TQI evaluation of a single project
@@ -42,29 +50,53 @@ import java.util.*;
 // TODO (1.0): turn into static methods (maybe unless logger problems)
 public class SingleProjectEvaluator {
 
+
+    private static File ROOT = new File(FileSystems.getDefault().getPath(".").toAbsolutePath().toString()).getParentFile();
+    private static File RESOURCES = new File(ROOT, "src/main/resources");
+    private static Path ROSLYN_RESOURCE_ROOT = Paths.get(RESOURCES.toString(), "Roslynator");
+    private static Logger logger = LoggerFactory.getLogger(SingleProjectEvaluator.class);
+
     public static void main(String[] args){
-        new SingleProjectEvaluator();
+        new SingleProjectEvaluator(args);
     }
 
     private Project project;
 
 
-    public SingleProjectEvaluator(){
-        Properties prop = PiqueProperties.getProperties();
+    public SingleProjectEvaluator(String[] args){
+        // Initialize config
+        logger.debug("Beginning initilization phase");
 
-        Path projectRoot = Paths.get(prop.getProperty("project.root"));
-        Path blankqmFilePath = Paths.get(prop.getProperty("blankqm.filepath"));
-        Path resultsDir = Paths.get(prop.getProperty("results.directory"));
 
-        // Initialize objects
-        String projectRootFlag = ".txt";
-        Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
+        PiqueProperties prop = new PiqueProperties();
 
-        Path qmLocation = Paths.get("out/CSharpSecurityQualityModel.json");
+        Path PROJECT_DIR = Paths.get(prop.getProperties().getProperty("analysis.root"));
+        Path RESULTS_DIR = Paths.get(prop.getProperties().getProperty("results.directory"));
+        Path QM_LOCATION = Paths.get(prop.getProperties().getProperty("derivedqm.filepath"));
+        Path MS_BUILD = Paths.get(prop.getProperties().getProperty("msbuild.bin"));
 
-        Set<ITool> tools = new HashSet<>();
-        Path outputPath = runEvaluator(projectRoot, resultsDir, qmLocation, tools);
-        System.out.println("output: " + outputPath.getFileName());
+        // Validate input strings
+
+        // Create output directory if not existing yet
+        String resultsDirName = FilenameUtils.getBaseName(PROJECT_DIR.getFileName().toString());
+        RESULTS_DIR = new File(RESULTS_DIR.toString(), resultsDirName).toPath();
+        RESULTS_DIR.toFile().mkdirs();
+
+        // Instantiate interface classes
+        logger.debug("Beginning tool instantiations");
+        ITool roslynator = new RoslynatorAnalyzer(
+                ROSLYN_RESOURCE_ROOT,
+                MS_BUILD
+        );
+        ITool roslynatorLoc = new RoslynatorLoc(ROSLYN_RESOURCE_ROOT, MS_BUILD);
+        Set<ITool> tools = Stream.of(roslynatorLoc, roslynator).collect(Collectors.toSet());
+        logger.trace("Analyzers loaded");
+
+        // Run evaluation
+        logger.debug("BEGINNING SINGLE PROJECT EVALUATION");
+        logger.debug("Analyzing project: {}", PROJECT_DIR.toString());
+        Path evalResults = runEvaluator(PROJECT_DIR, RESULTS_DIR, QM_LOCATION, tools);
+        logger.info("Evaluation finished. You can find the results at {}", evalResults.toString());
 
     }
     //region Get / Set
