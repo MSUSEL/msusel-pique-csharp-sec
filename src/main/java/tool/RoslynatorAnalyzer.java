@@ -73,10 +73,6 @@ public class RoslynatorAnalyzer extends RoslynatorTool implements ITool {
         File tempResults = new File(System.getProperty("user.dir") +"/out/roslynator_output.xml");
         tempResults.getParentFile().mkdirs();
 
-        System.out.println("user dir: " + System.getProperty("user.dir"));
-        System.out.println("parent: " + tempResults.getParentFile());
-
-
         // Append .sln or .csproj file to path
         // TODO: refactor to method and find better way that doesn't use stacked if statements.
         Set<String> targetFiles = FileUtility.findFileNamesFromExtension(path, ".sln", 1);
@@ -100,12 +96,8 @@ public class RoslynatorAnalyzer extends RoslynatorTool implements ITool {
 
         // Strings for CLI call
         String roslynator = getExecutable().toAbsolutePath().toString();
-        //String roslynator = "C:/Users/Payton Harrison/Repository/msusel-pique-csharp/resources/bin/Roslynator.exe";
         String command = "analyze";
         String assemblyDir = "--analyzer-assemblies=" + getToolRoot().toAbsolutePath().toString()  + sep + "bin";
-
-        //String assemblyDir = "--analyzer-assemblies=" + "C:/Users/Payton Harrison/Repository/msusel-pique-csharp/resources/bin/Roslynator/bin";
-
         String msBuild = "--msbuild-path=" + this.msBuild.toString();
         String output = "--output=" + tempResults.toString();
         String target = path.toString();
@@ -129,11 +121,6 @@ public class RoslynatorAnalyzer extends RoslynatorTool implements ITool {
             p.waitFor();
         }
         catch (IOException | InterruptedException e) { e.printStackTrace(); }
-
-        System.out.println("output: " + output);
-        System.out.println("type: " + tempResults.getClass());
-        System.out.println("check: " + tempResults.isFile());
-        System.out.println("exists?: " + tempResults.exists());
 
         // Assert result file was created
         if (!tempResults.isFile()) {
