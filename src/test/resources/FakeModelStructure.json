@@ -1,0 +1,83 @@
+{
+  "name" : "Binary Security Quality Model CWE-699",
+  "additionalData" : { },
+  "global_config" : {
+    "benchmark_strategy" : "calibration.BinaryBenchmarker",
+    "normalizer" : "evaluator.NoNormalizer",
+    "weights_strategy" : "calibration.BinaryCWEWeighter"
+  },
+  "factors" : {
+    "tqi" : {
+      "Binary Security Quality" : {
+        "description" : "A measure of how secure a binary is relevant to benchmarked binaries from stakeholder perspective."
+      }
+    },
+    "quality_aspects" : {
+      "Confidentiality" : {
+        "description" : "Information is not made available or disclosed to unauthorized individuals, entities, or processes.",
+        "eval_strategy" : "evaluator.QualityAspectEvaluator"
+      },
+      "Integrity" : {
+        "description" : "Data or processes cannot be modified in an unauthorized way.",
+        "eval_strategy" : "evaluator.QualityAspectEvaluator"
+      }
+    },
+    "product_factors" : {
+      "Category CWE-234" : {
+        "description" : "",
+        "eval_strategy" : "evaluator.WeightedAverageEvaluator",
+        "children" : {
+          "Yara email Measure" : {}
+        }
+      },
+      "Category CWE-123" : {
+        "description" : "",
+        "eval_strategy" : "evaluator.WeightedAverageEvaluator",
+        "children" : {
+          "CWE-123 Weakness Measure" : { },
+          "CVE-CWE-123 Measure" : { }
+        }
+      }
+    }
+  },
+  "measures" : {
+	"Yara email Measure" : {
+      "positive" : false,
+      "utility_function" : "evaluator.BinaryUtility",
+      "description" : "",
+      "children" : {
+        "Yara email Diagnostic" : { }
+      }
+    },
+    "CVE-CWE-123 Measure" : {
+      "positive" : false,
+      "utility_function" : "evaluator.BinaryUtility",
+      "description" : "",
+      "children" : {
+        "CVE-CWE-123 Diagnostic" : { }
+      }
+    },
+    "CWE-123 Weakness Measure" : {
+      "positive" : false,
+      "utility_function" : "evaluator.BinaryUtility",
+      "description" : "",
+      "children" : {
+        "CWE-123 Weakness Diagnostic" : { }
+      }
+    }
+  },
+  "diagnostics" : {
+    "CWE-123 Weakness Diagnostic" : {
+      "description" : "",
+      "toolName" : "testTool"
+    },
+    "CVE-CWE-123 Diagnostic" : {
+      "description" : "",
+      "toolName" : "testTool"
+    },
+    "Yara email Diagnostic" : {
+      "description" : "",
+      "toolName" : "testTool"
+    }
+  }
+}

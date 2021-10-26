@@ -1,5 +1,5 @@
 /**
- * MIT License
+  * MIT License
  * Copyright (c) 2019 Montana State University Software Engineering Labs
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,18 +29,32 @@ import pique.model.ModelNode;
 import pique.utility.BigDecimalWithContext;
 
 /**
- * Evaluates a node as the sum of children multiplied by their edge weight.
+ * Incomplete version of an evaluator still in the works. The idea is that we want to be able to evaluate a node but not lose sensitivity in the model due to 
+ * nodes that don't have any findings in the benchmark or binary under analysis. This is not currently (as of writing this) in use in PIQUE-Bin or any other PIQUE
+ * model. This is primarily because it has the unfortunate consequence of potentially raising the TQI when we encounter a new vulnerability in some cases. Perhaps
+ * that should be an edge case, but for now, this will remain here, not being used. 
+ *
  */
-public class WeightedAverageEvaluator extends Evaluator {
+public class PriorityMeasureEvaluator extends Evaluator {
 
     @Override
     public BigDecimal evaluate(ModelNode modelNode) {
-        BigDecimal weightedSum = new BigDecimalWithContext(0.0);
+    	BigDecimal weightedSum = new BigDecimalWithContext(0.0);
+    	
+        // Apply weighted sums
         for (ModelNode child : modelNode.getChildren().values()) {
-        	weightedSum = weightedSum.add(
-        			child.getValue().multiply(
-        					modelNode.getWeight(child.getName())));
+        	weightedSum = weightedSum.add(child.getValue().multiply(modelNode.getWeight(child.getName())));
         }
+        
         return weightedSum;
+    }
+    
+    public int numberOfNonZeroWeightChildren(ModelNode modelNode) {
+    	int count = 0;
+    	
+    	for (ModelNode child : modelNode.getChildren().values()) {
+        	if (modelNode.getWeight(child.getName()).compareTo(new BigDecimalWithContext(0.0))>0) count++;
+        }
+    	return count;
     }
 }

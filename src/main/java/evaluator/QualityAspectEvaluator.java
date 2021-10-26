@@ -29,18 +29,36 @@ import pique.model.ModelNode;
 import pique.utility.BigDecimalWithContext;
 
 /**
- * Evaluates a node as the sum of children multiplied by their edge weight.
+ * Evaluator for Quality Aspects. Evaluates as a sum of nodes*weights but limits the score to [0,1]
+ * @author Andrew
+ *
  */
-public class WeightedAverageEvaluator extends Evaluator {
+public class QualityAspectEvaluator extends Evaluator {
 
     @Override
     public BigDecimal evaluate(ModelNode modelNode) {
-        BigDecimal weightedSum = new BigDecimalWithContext(0.0);
+    	BigDecimal weightedSum = new BigDecimalWithContext(0.0);
+    	
+        // Apply weighted sums
         for (ModelNode child : modelNode.getChildren().values()) {
-        	weightedSum = weightedSum.add(
-        			child.getValue().multiply(
-        					modelNode.getWeight(child.getName())));
+        	weightedSum = weightedSum.add(child.getValue().multiply(modelNode.getWeight(child.getName())));
         }
+        if (weightedSum.compareTo(new BigDecimalWithContext(1.0)) >1.0) {//weightedSum>1.0
+        	weightedSum = new BigDecimalWithContext(1.0);
+        }
+        else if (weightedSum.compareTo(new BigDecimalWithContext(0.0))<0) {//weightedSum<0.0
+        	weightedSum = new BigDecimalWithContext(0.0);
+        }
+        
         return weightedSum;
+    }
+    
+    public int numberOfNonZeroWeightChildren(ModelNode modelNode) {
+    	int count = 0;
+    	
+    	for (ModelNode child : modelNode.getChildren().values()) {
+        	if (modelNode.getWeight(child.getName()).compareTo(new BigDecimalWithContext(0.0))>0) count++;//modelNode.getWeight(child.getName())>0
+        }
+    	return count;
     }
 }

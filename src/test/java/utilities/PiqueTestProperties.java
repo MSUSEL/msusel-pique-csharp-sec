@@ -20,27 +20,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package evaluator;
+package utilities;
 
-import java.math.BigDecimal;
+import java.io.FileReader;
+import java.util.Properties;
 
-import pique.evaluation.Evaluator;
-import pique.model.ModelNode;
-import pique.utility.BigDecimalWithContext;
+public class PiqueTestProperties {
 
-/**
- * Evaluates a node as the sum of children multiplied by their edge weight.
- */
-public class WeightedAverageEvaluator extends Evaluator {
+    public static Properties getProperties(){
 
-    @Override
-    public BigDecimal evaluate(ModelNode modelNode) {
-        BigDecimal weightedSum = new BigDecimalWithContext(0.0);
-        for (ModelNode child : modelNode.getChildren().values()) {
-        	weightedSum = weightedSum.add(
-        			child.getValue().multiply(
-        					modelNode.getWeight(child.getName())));
+        Properties prop = new Properties();
+        try {
+            prop.load(new FileReader("src/test/resources/pique-bin-test.properties"));
+
+        }catch(Exception e){
+        	try {
+        		prop.load(new FileReader("pique-bin.properties")); // this is the case when running from the .jar version of pique
+        	}
+        	catch(Exception e2){
+        		e2.printStackTrace();
+        	}
         }
-        return weightedSum;
+        return prop;
     }
+    
 }

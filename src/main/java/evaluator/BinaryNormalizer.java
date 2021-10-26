@@ -24,23 +24,18 @@ package evaluator;
 
 import java.math.BigDecimal;
 
-import pique.evaluation.Evaluator;
-import pique.model.ModelNode;
+import pique.evaluation.Normalizer;
 import pique.utility.BigDecimalWithContext;
 
-/**
- * Evaluates a node as the sum of children multiplied by their edge weight.
- */
-public class WeightedAverageEvaluator extends Evaluator {
+public class BinaryNormalizer extends Normalizer {
 
+
+	/**
+	 * We do not normalize, hence this returns a value of 1 always, resulting in no normalization.
+	 */
     @Override
-    public BigDecimal evaluate(ModelNode modelNode) {
-        BigDecimal weightedSum = new BigDecimalWithContext(0.0);
-        for (ModelNode child : modelNode.getChildren().values()) {
-        	weightedSum = weightedSum.add(
-        			child.getValue().multiply(
-        					modelNode.getWeight(child.getName())));
-        }
-        return weightedSum;
+    public BigDecimal normalize(BigDecimal v) {
+        return new BigDecimalWithContext(1.0);
     }
+
 }

@@ -20,27 +20,42 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package evaluator;
+package evaluatorTests;
+
+import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
 
-import pique.evaluation.Evaluator;
-import pique.model.ModelNode;
+import org.junit.Test;
+
+import evaluator.BinaryUtility;
 import pique.utility.BigDecimalWithContext;
 
-/**
- * Evaluates a node as the sum of children multiplied by their edge weight.
- */
-public class WeightedAverageEvaluator extends Evaluator {
+public class binaryUtilityTests {
 
-    @Override
-    public BigDecimal evaluate(ModelNode modelNode) {
-        BigDecimal weightedSum = new BigDecimalWithContext(0.0);
-        for (ModelNode child : modelNode.getChildren().values()) {
-        	weightedSum = weightedSum.add(
-        			child.getValue().multiply(
-        					modelNode.getWeight(child.getName())));
-        }
-        return weightedSum;
-    }
+	@Test
+	public void basicUtilityFunctionTest() {
+		BinaryUtility b = new BinaryUtility();
+		BigDecimal v = new BigDecimalWithContext(5.0);
+		BigDecimal[] thresholds = {new BigDecimalWithContext(0.0),new BigDecimalWithContext(10.0)};
+		BigDecimal output = b.utilityFunction(v, thresholds, false);
+		assertTrue(output.compareTo(new BigDecimalWithContext(0.5))==0);
+	}
+	
+	@Test
+	public void utilityFunctionOutputsNegativeValuesTest() {
+		BinaryUtility b = new BinaryUtility();
+		BigDecimal v = new BigDecimalWithContext(15.0);
+		BigDecimal[] thresholds = {new BigDecimalWithContext(5.0),new BigDecimalWithContext(10.0)};
+		BigDecimal output = b.utilityFunction(v, thresholds, false);
+		assertTrue(output.compareTo(new BigDecimalWithContext(0.0))<0);
+	}
+	
+	@Test
+	public void dealsWithNullThresholdsTest() {
+		BinaryUtility b = new BinaryUtility();
+		BigDecimal v = new BigDecimalWithContext(0.0);
+		BigDecimal output = b.utilityFunction(v, null, false);
+		assertTrue(output.compareTo(new BigDecimalWithContext(0.0))==0);
+	}
 }

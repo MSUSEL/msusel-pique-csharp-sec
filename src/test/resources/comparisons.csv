@@ -1,0 +1,5 @@
+﻿﻿Criteria,Confidentiality,Integrity
+Confidentiality,1,0.5
+Integrity,2,1
+CWE (123),0,1
+CWE (234),1,1

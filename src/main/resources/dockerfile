@@ -1,0 +1,4 @@
+FROM blacktop/yara
+
+RUN apk add git \
+	&& git clone https://github.com/Yara-Rules/rules.git
