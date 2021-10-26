@@ -1,4 +1,4 @@
-# msusel-pique-bin
+# msusel-pique-csharp-sec
 ## Introduction
 This project is an operationalized PIQUE model for the assessment of security quality in binary files. 
 
