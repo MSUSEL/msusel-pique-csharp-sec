@@ -31,11 +31,11 @@ public class PiqueProperties {
 
         Properties prop = new Properties();
         try {
-            prop.load(new FileReader("src/main/resources/pique-bin.properties"));
+            prop.load(new FileReader("src/main/resources/pique-csharp-sec.properties"));
 
         }catch(Exception e){
         	try {
-        		prop.load(new FileReader("pique-bin.properties")); // this is the case when running from the .jar version of pique
+        		prop.load(new FileReader("pique-csharp-sec.properties")); // this is the case when running from the .jar version of pique
         	}
         	catch(Exception e2){
         		e2.printStackTrace();

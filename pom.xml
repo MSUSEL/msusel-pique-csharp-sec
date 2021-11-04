@@ -33,15 +33,23 @@
     <version>1.1.1</version>
   </parent>
 
-
   <modelVersion>4.0.0</modelVersion>
+  <artifactId>msusel-pique-csharp</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1</version>
+  <name>msusel-pique-csharp</name>
+  <description>MSU PIQUE quality model implementation for csharp</description>
+  <url>https://msusel.github.io</url>
+
+<!--  <modelVersion>4.0.0</modelVersion>
   <artifactId>msusel-pique-bin</artifactId>
   <packaging>jar</packaging>
   <version>0.0.1</version>
   <name>msusel-pique-bin</name>
   <description>MSU PIQUE quality model implementation for binaries</description>
   <url>https://msusel.github.io</url>
-  
+-->
+
   <build>
     <plugins>
         <plugin>

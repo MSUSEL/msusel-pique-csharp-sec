@@ -46,9 +46,7 @@ import pique.model.QualityModel;
 import pique.model.QualityModelExport;
 import pique.model.QualityModelImport;
 import pique.model.Tqi;
-import tool.CVEBinToolWrapper;
-import tool.CWECheckerToolWrapper;
-import tool.YaraRulesToolWrapper;
+import tool.*;
 import utilities.PiqueProperties;
 
 /**
@@ -77,19 +75,25 @@ public class QualityModelDeriver {
         Path derivedModelFilePath = Paths.get(prop.getProperty("results.directory"));
 
         // Initialize objects
-        String projectRootFlag = "";
+        //String projectRootFlag = "";
+        String projectRootFlag = prop.getProperty("target.flag");
         Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
 
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
-        
-        ITool cvebinToolWrapper = new CVEBinToolWrapper();
+
+        // run roslynator
+        ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
+        ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
+        Set<ITool> tools = Stream.of(roslynatorLoc, roslynator).collect(Collectors.toSet());
+
+        //ITool cvebinToolWrapper = new CVEBinToolWrapper();
         //ITool cweCheckerWrapper = new CWECheckerToolWrapper();
         //ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
-        Set<ITool> tools = Stream.of(cvebinToolWrapper).collect(Collectors.toSet());
+        //Set<ITool> tools = Stream.of(cvebinToolWrapper).collect(Collectors.toSet());
+
         QualityModelImport qmImport = new QualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();
         qmDescription = pique.utility.TreeTrimmingUtility.trimQualityModelTree(qmDescription);
-        
 
         QualityModel derivedQualityModel = QualityModelDeriver.deriveModel(qmDescription, tools, benchmarkRepo, projectRootFlag);
 
