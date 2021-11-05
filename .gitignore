@@ -210,3 +210,7 @@ $RECYCLE.BIN/
 src/test/java/pique/Scratch.java
 src/test/out
 
+/resources
+src/main/resources/Roslynator
+src/main/resources/pique-csharp-sec_description.json
+
