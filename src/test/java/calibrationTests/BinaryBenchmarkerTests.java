@@ -3,20 +3,16 @@ package calibrationTests;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-import calibration.BinaryBenchmarker;
 import utilities.PiqueTestProperties;
 
 import pique.analysis.ITool;
 import pique.calibration.IBenchmarker;
 import pique.model.QualityModel;
 import pique.model.QualityModelImport;
-import tool.YaraRulesToolWrapper;
 
-import java.io.FileReader;
 import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;

@@ -34,14 +34,12 @@ import org.junit.Test;
 
 import pique.analysis.Tool;
 import pique.model.Diagnostic;
-import tool.CWECheckerToolWrapper;
-import tool.YaraRulesToolWrapper;
 import utilities.PiqueProperties;
 
 public class YaraRulesToolWrapperTest {
 	
 	
-	@Test
+	/*@Test
 	public void ToolShouldHaveFindingsOnBinaryWithRuleViolations() {
 		Properties prop = PiqueProperties.getProperties();
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
@@ -128,5 +126,5 @@ public class YaraRulesToolWrapperTest {
         	assert(d1.getChildren().size())==(d2.getChildren().size());         	
             assert(d2.getChildren().size())==(d3.getChildren().size());
         }
-	}
+	}*/
 }

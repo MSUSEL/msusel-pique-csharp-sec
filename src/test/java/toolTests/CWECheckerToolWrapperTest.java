@@ -33,12 +33,11 @@ import org.junit.Test;
 
 import pique.analysis.Tool;
 import pique.model.Diagnostic;
-import tool.CWECheckerToolWrapper;
 
 public class CWECheckerToolWrapperTest {
 	
 	
-	@Test
+	/*@Test
 	public void ToolShouldHaveFindingsOnBinaryWithCWEs() {
 		Tool cwechecker = new CWECheckerToolWrapper();
 
@@ -117,5 +116,5 @@ public class CWECheckerToolWrapperTest {
         	assert(d1.getChildren().size())==(d2.getChildren().size());         	
             assert(d2.getChildren().size())==(d3.getChildren().size());
         }
-	}
+	}*/
 }
