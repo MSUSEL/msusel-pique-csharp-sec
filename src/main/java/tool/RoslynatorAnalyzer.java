@@ -158,41 +158,43 @@ public class RoslynatorAnalyzer extends RoslynatorTool implements ITool {
                 Diagnostic diagnostic = findMapMemberByDiagnosticId(diagnostics, diagnosticId);
                 NodeList diagnosticChildren = diagnosticElement.getChildNodes();
 
-                // attach findings
-                //TODO fix this default constructor workaround
-                //Finding finding = new Finding("", 0, 0, 0);
-                Finding finding = new Finding(null, -1, -1, 0);
-                for (int j = 0; j < diagnosticChildren.getLength(); j++) {
-                    Node diagnosticChild = diagnosticChildren.item(j);
-                    switch (diagnosticChild.getNodeName()) {
-                        case "FilePath":
-                            finding.setFilePath(diagnosticChild.getTextContent());
-                            break;
-                        case "Location":
-                            finding.setLineNumber(Integer.parseInt(((DeferredElementImpl) diagnosticChild).getAttribute("Line")));
-                            finding.setCharacterNumber(Integer.parseInt(((DeferredElementImpl) diagnosticChild).getAttribute("Character")));
-                            break;
-                        case "Severity":
-                            switch (diagnosticChild.getTextContent()) {
-                                case "Info":
-                                    finding.setSeverity(2);
-                                    break;
-                                case "Warning":
-                                    finding.setSeverity(3);
-                                    break;
-                                case "Error":
-                                    finding.setSeverity(4);
-                                    break;
-                                default:
-                                    finding.setSeverity(1);
-                                    break;
-                            }
-                            break;
-                        default:
-                            break;
+                    // attach findings
+                    //TODO fix this default constructor workaround
+                    //Finding finding = new Finding("", 0, 0, 0);
+                    Finding finding = new Finding("", 0, 0, 0);
+                    //Finding finding = new Finding(null, -1, -1, 0);
+
+                    for (int j = 0; j < diagnosticChildren.getLength(); j++) {
+                        Node diagnosticChild = diagnosticChildren.item(j);
+                        switch (diagnosticChild.getNodeName()) {
+                            case "FilePath":
+                                finding.setFilePath(diagnosticChild.getTextContent());
+                                break;
+                            case "Location":
+                                finding.setLineNumber(Integer.parseInt(((DeferredElementImpl) diagnosticChild).getAttribute("Line")));
+                                finding.setCharacterNumber(Integer.parseInt(((DeferredElementImpl) diagnosticChild).getAttribute("Character")));
+                                break;
+                            case "Severity":
+                                switch (diagnosticChild.getTextContent()) {
+                                    case "Info":
+                                        finding.setSeverity(2);
+                                        break;
+                                    case "Warning":
+                                        finding.setSeverity(3);
+                                        break;
+                                    case "Error":
+                                        finding.setSeverity(4);
+                                        break;
+                                    default:
+                                        finding.setSeverity(1);
+                                        break;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
                     }
-                }
-                diagnostic.setChild(finding);
+                    diagnostic.setChild(finding);
 
                 // add parsed diagnostic with attached finding objects to collection
                 diagnostics.put(diagnosticId, diagnostic);

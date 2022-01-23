@@ -75,15 +75,12 @@ public class QualityModelDeriver {
 
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 
-        // run roslynator
+        // run roslynator and security code scan
         ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-        ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-        Set<ITool> tools = Stream.of(roslynatorLoc, roslynator).collect(Collectors.toSet());
-
-        //ITool cvebinToolWrapper = new CVEBinToolWrapper();
-        //ITool cweCheckerWrapper = new CWECheckerToolWrapper();
-        //ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
-        //Set<ITool> tools = Stream.of(cvebinToolWrapper).collect(Collectors.toSet());
+        //ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
+        ITool securityCodeScan = new SecurityCodeScanAnalyzer();
+        //TODO: remove roslynator, add second security tool
+        Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan).collect(Collectors.toSet());
 
         QualityModelImport qmImport = new QualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();

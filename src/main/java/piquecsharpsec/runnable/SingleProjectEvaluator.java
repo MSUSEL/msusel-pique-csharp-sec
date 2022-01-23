@@ -68,15 +68,12 @@ public class SingleProjectEvaluator {
         Path qmLocation = Paths.get(prop.getProperty("derived.qm"));
         Path resources = Paths.get(prop.getProperty("blankqm.filepath"));
         resources = resources.toAbsolutePath().getParent();
-        
-        //ITool cveBinTool = new CVEBinToolWrapper();
-        //ITool cweCheckerTool = new CWECheckerToolWrapper();
-       // ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
-        //Set<ITool> tools = Stream.of(cveBinTool).collect(Collectors.toSet());
 
+        // run roslynator and security code scan
         ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-        ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-        Set<ITool> tools = Stream.of(roslynatorLoc, roslynator).collect(Collectors.toSet());
+       // ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
+        ITool securityCodeScan = new SecurityCodeScanAnalyzer();
+        Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan).collect(Collectors.toSet());
 
         Path outputPath = runEvaluator(projectRoot, resultsDir, qmLocation, tools);
         System.out.println("output: " + outputPath.getFileName());
@@ -173,7 +170,7 @@ public class SingleProjectEvaluator {
         // TODO: turn this into a temp file that always deletes on/before program exit
         Path analysisOutput = tool.analyze(projectDir);
 
-        // (2) prase output: make collection of {Key: diagnostic name, Value: diagnostic objects}  b 
+        // (2) parse output: make collection of {Key: diagnostic name, Value: diagnostic objects}
         return tool.parseAnalysis(analysisOutput);
     }
 
