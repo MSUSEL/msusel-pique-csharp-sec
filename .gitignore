@@ -212,5 +212,5 @@ src/test/out
 
 resources/
 src/main/resources/Roslynator
-src/main/resources/pique-csharp-sec_description.json
+src/main/resources/pique-csharp_description.json
 

@@ -82,13 +82,9 @@ public class SecurityCodeScanAnalyzer extends Tool implements ITool {
             }
         }
 
-        //String out = "";
-        //TODO: add ' ' around project location path? maybe
-        String[] cmd = {"security-scan ", "--ignore-msbuild-errors ", "--export=", tempResults.toString(),
-                projectLocation.toAbsolutePath().toString()};
+        //this method of giving the command line pieces modeled from David Rice's PIQUE-Csharp, the RoslynatorAnalyzer class
 
-        System.out.println(cmd[0]+ cmd[1]+ cmd[2]);
-
+        //strings for CLI call
         String command = "security-scan";
         String ignore = "--ignore-msbuild-errors";
         String output = "--export=" + tempResults.toString();

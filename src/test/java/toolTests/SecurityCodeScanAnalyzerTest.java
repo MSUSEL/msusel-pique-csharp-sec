@@ -3,7 +3,6 @@ package toolTests;
 import org.junit.Test;
 import pique.analysis.Tool;
 import pique.model.Diagnostic;
-import tool.RoslynatorAnalyzer;
 import tool.SecurityCodeScanAnalyzer;
 import utilities.PiqueProperties;
 

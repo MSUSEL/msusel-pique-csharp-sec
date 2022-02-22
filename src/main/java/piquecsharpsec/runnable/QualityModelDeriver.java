@@ -75,12 +75,12 @@ public class QualityModelDeriver {
 
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 
-        // run roslynator and security code scan
+        // run roslynatorLoc, security code scan, and insider
         ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
         //ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
         ITool securityCodeScan = new SecurityCodeScanAnalyzer();
-        //TODO: remove roslynator, add second security tool
-        Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan).collect(Collectors.toSet());
+        ITool insider = new InsiderAnalyzer();
+        Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan, insider).collect(Collectors.toSet());
 
         QualityModelImport qmImport = new QualityModelImport(blankqmFilePath);
         QualityModel qmDescription = qmImport.importQualityModel();
@@ -91,7 +91,8 @@ public class QualityModelDeriver {
         Path jsonOutput = new QualityModelExport(derivedQualityModel)
         		.exportToJson(derivedQualityModel
         				.getName(), derivedModelFilePath);
-  
+
+        //changing the derived model file name removed link in output?
         System.out.println("Quality Model derivation finished. You can find the file at " + jsonOutput.toAbsolutePath().toString());
     }
 

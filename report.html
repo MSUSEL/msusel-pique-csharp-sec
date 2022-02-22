@@ -1,0 +1,381 @@
+
+	<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <title>Report</title>
+    <link href='./style.css' rel='stylesheet' >
+    <link href='https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap' rel='stylesheet'>
+</head>
+<style>
+    body {
+        font-family: 'Inconsolata', monospace;
+        font-size: 13px;
+    }
+</style>
+<body>
+<div class='container' style='border: rgba(0,0,0,.1) 1px solid'>
+    <div class='row'>
+        <div class='col-4'><img src='https://insidersec.io/wp-content/uploads/2020/03/insider-novo-logo.png' alt=''
+                                class='img-fluid' style='margin-bottom: 20px'></div>
+    </div>
+	<div class='row'>
+        <div class='col-12'>
+            <h6>Score Security 26/100 </h6>
+	</div>
+	<hr>
+
+
+</div>
+	<hr>
+	<div class='row'>
+		<div class='col-12'>
+					 <h7>Resume of Vulnerabilities</h7>
+					<table>
+						<tr><td>None</td><td>&nbsp; 0</td></tr>
+						<tr><td>Low</td><td>&nbsp; 5</td></tr>
+						<tr><td>Medium</td><td>&nbsp; 10</td></tr>
+						<tr><td>High</td><td>&nbsp; 3</td></tr>
+						<tr><td>Critical</td><td>&nbsp; 0</td></tr>
+						<tr><td>Total</td><td>&nbsp; 18</td></tr>
+					</table>
+		</div>
+	</div>
+	<hr>
+	<div class='row'>
+		<div class='col-12'>
+				You are using the Insider open source version. If you like the product and want more features, visit <a href='http://insidersec.io'>http://insidersec.io</a> and get to know our enterprise version.<br><br>
+
+If you are a developer, then you can contribute to the improvement of the software while using an open source version
+		</div>
+	</div>
+	<hr>
+    <div class='row'>
+    </div>
+    
+
+    
+
+    
+    <div class='row'>
+        <div class='col-12'>
+            <h6>Vulnerabilities</h6>
+            <div class=''>
+                <table class='table table-sm' style='table-layout:fixed;'>
+                    <tbody>
+
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>7.4<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>ParameterizedQueries.cs (68:17)<br>
+                                    <b>VulnerabilityID :</b>d71b8c621a603707367549767add3423<br>
+                                    <b>Method: </b>username = &#34;Mary&#34;;<br>
+                                    <b>Description: </b>File contains sensitive information written directly, such as usernames, passwords, keys, etc.<br>
+                                    <b>ClassMessage: </b>src\IntegrationTests\Parameterization\ParameterizedQueries.cs (68:17)<br>
+                                    <b>Recomendation: </b>Credentials must not be stored in the Git code or repository. There are ‘Secrets Management’ solutions that can be used to store secrets or use Pipeline resources.<br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>7.4<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>ParameterizedQueries.cs (76:17)<br>
+                                    <b>VulnerabilityID :</b>16b9d1dfd411f65eb226183513ad0580<br>
+                                    <b>Method: </b>username = &#34;Joe&#34;;<br>
+                                    <b>Description: </b>File contains sensitive information written directly, such as usernames, passwords, keys, etc.<br>
+                                    <b>ClassMessage: </b>src\IntegrationTests\Parameterization\ParameterizedQueries.cs (76:17)<br>
+                                    <b>Recomendation: </b>Credentials must not be stored in the Git code or repository. There are ‘Secrets Management’ solutions that can be used to store secrets or use Pipeline resources.<br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>7.4<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>ParameterizedQueries.cs (84:17)<br>
+                                    <b>VulnerabilityID :</b>b6338719223f8f5c8042d2ff83a9b828<br>
+                                    <b>Method: </b>username = &#34;Jane&#34;;<br>
+                                    <b>Description: </b>File contains sensitive information written directly, such as usernames, passwords, keys, etc.<br>
+                                    <b>ClassMessage: </b>src\IntegrationTests\Parameterization\ParameterizedQueries.cs (84:17)<br>
+                                    <b>Recomendation: </b>Credentials must not be stored in the Git code or repository. There are ‘Secrets Management’ solutions that can be used to store secrets or use Pipeline resources.<br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>JsonNet.cs (83:32)<br>
+                                    <b>VulnerabilityID :</b>58e55794c8aba50f2d1cbd76a54d2056<br>
+                                    <b>Method: </b>public string this[string key]<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\JsonNet.cs (83:32)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>JsonNet.cs (133:29)<br>
+                                    <b>VulnerabilityID :</b>dbb3501663fa034b34b78ca14891455a<br>
+                                    <b>Method: </b>public void Add(string key, string value)<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\JsonNet.cs (133:29)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>JsonNet.cs (148:37)<br>
+                                    <b>VulnerabilityID :</b>573e2b63ef8abc503e81845b5e948146<br>
+                                    <b>Method: </b>public bool ContainsKey(string key)<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\JsonNet.cs (148:37)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>JsonNet.cs (168:32)<br>
+                                    <b>VulnerabilityID :</b>fa2fe457eab3f4bf57edf0316d002d9f<br>
+                                    <b>Method: </b>public bool Remove(string key)<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\JsonNet.cs (168:32)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>JsonNet.cs (173:37)<br>
+                                    <b>VulnerabilityID :</b>4223a28dd2f9491f817d1e28f7569061<br>
+                                    <b>Method: </b>public bool TryGetValue(string key, out string value)<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\JsonNet.cs (173:37)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>2<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>UseDestinationValue.cs (36:9)<br>
+                                    <b>VulnerabilityID :</b>4f2b203c345151e9d6a576dfaf3d6c1a<br>
+                                    <b>Method: </b>public class CollectionDTOController&lt;T, K&gt;<br>
+                                    <b>Description: </b>The Anti-forgery token is missing. Without this validation, an attacker could send a link to the victim and, visiting the malicious link, a web page would trigger a POST request (because it is a blind attack - the attacker does not see a response to the triggered request and does not have the use of the GET request and GET requests must not change a server state by default) for the site. The victim would not be able to recognize that an action is taken in the background, but his cookie would be sent automatically if he was authenticated on the website. This attack requires no special interaction other than visiting a website.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\UseDestinationValue.cs (36:9)<br>
+                                    <b>Recomendation: </b>To help prevent CSRF attacks, ASP.NET MVC uses anti-forgery tokens, also called request verification tokens.
+
+- The customer requests an HTML page that contains a form.
+
+- The server includes two tokens in the response. A token is sent as a cookie. The other is placed in a hidden form field. Tokens are generated randomly so that an opponent cannot guess the values.
+
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
+
+- When the client submits the form, he must send the two tokens back to the server. The client sends the cookie token as a cookie and sends the form token within the form data. (A browser client does this automatically when the user submits the form.)
+
+- If a request does not include both tokens, the server will not allow the request.<br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>2<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>UseDestinationValue.cs (70:9)<br>
+                                    <b>VulnerabilityID :</b>ca833229c5677fbce8a89363db584772<br>
+                                    <b>Method: </b>public class CollectionController&lt;T, K, Z&gt;<br>
+                                    <b>Description: </b>The Anti-forgery token is missing. Without this validation, an attacker could send a link to the victim and, visiting the malicious link, a web page would trigger a POST request (because it is a blind attack - the attacker does not see a response to the triggered request and does not have the use of the GET request and GET requests must not change a server state by default) for the site. The victim would not be able to recognize that an action is taken in the background, but his cookie would be sent automatically if he was authenticated on the website. This attack requires no special interaction other than visiting a website.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\UseDestinationValue.cs (70:9)<br>
+                                    <b>Recomendation: </b>To help prevent CSRF attacks, ASP.NET MVC uses anti-forgery tokens, also called request verification tokens.
+
+- The customer requests an HTML page that contains a form.
+
+- The server includes two tokens in the response. A token is sent as a cookie. The other is placed in a hidden form field. Tokens are generated randomly so that an opponent cannot guess the values.
+
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
+
+- When the client submits the form, he must send the two tokens back to the server. The client sends the cookie token as a cookie and sends the form token within the form data. (A browser client does this automatically when the user submits the form.)
+
+- If a request does not include both tokens, the server will not allow the request.<br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>2<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>UseDestinationValue.cs (129:9)<br>
+                                    <b>VulnerabilityID :</b>9209ca6178d6994f3c49fa848f613ae8<br>
+                                    <b>Method: </b>public class CollectionDTOController&lt;T, K&gt;<br>
+                                    <b>Description: </b>The Anti-forgery token is missing. Without this validation, an attacker could send a link to the victim and, visiting the malicious link, a web page would trigger a POST request (because it is a blind attack - the attacker does not see a response to the triggered request and does not have the use of the GET request and GET requests must not change a server state by default) for the site. The victim would not be able to recognize that an action is taken in the background, but his cookie would be sent automatically if he was authenticated on the website. This attack requires no special interaction other than visiting a website.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\UseDestinationValue.cs (129:9)<br>
+                                    <b>Recomendation: </b>To help prevent CSRF attacks, ASP.NET MVC uses anti-forgery tokens, also called request verification tokens.
+
+- The customer requests an HTML page that contains a form.
+
+- The server includes two tokens in the response. A token is sent as a cookie. The other is placed in a hidden form field. Tokens are generated randomly so that an opponent cannot guess the values.
+
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
+
+- When the client submits the form, he must send the two tokens back to the server. The client sends the cookie token as a cookie and sends the form token within the form data. (A browser client does this automatically when the user submits the form.)
+
+- If a request does not include both tokens, the server will not allow the request.<br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>2<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>UseDestinationValue.cs (163:9)<br>
+                                    <b>VulnerabilityID :</b>4af8f4a54374efd1d89bd5ab3017fdc0<br>
+                                    <b>Method: </b>public class CollectionController&lt;T, K, Z&gt;<br>
+                                    <b>Description: </b>The Anti-forgery token is missing. Without this validation, an attacker could send a link to the victim and, visiting the malicious link, a web page would trigger a POST request (because it is a blind attack - the attacker does not see a response to the triggered request and does not have the use of the GET request and GET requests must not change a server state by default) for the site. The victim would not be able to recognize that an action is taken in the background, but his cookie would be sent automatically if he was authenticated on the website. This attack requires no special interaction other than visiting a website.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\UseDestinationValue.cs (163:9)<br>
+                                    <b>Recomendation: </b>To help prevent CSRF attacks, ASP.NET MVC uses anti-forgery tokens, also called request verification tokens.
+
+- The customer requests an HTML page that contains a form.
+
+- The server includes two tokens in the response. A token is sent as a cookie. The other is placed in a hidden form field. Tokens are generated randomly so that an opponent cannot guess the values.
+
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
+
+- When the client submits the form, he must send the two tokens back to the server. The client sends the cookie token as a cookie and sends the form token within the form data. (A browser client does this automatically when the user submits the form.)
+
+- If a request does not include both tokens, the server will not allow the request.<br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>3<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>MultiThreadingIssues.cs (85:40)<br>
+                                    <b>VulnerabilityID :</b>ec1f705d0e610dc10f5490b4a52fbc3c<br>
+                                    <b>Method: </b>static readonly Random _random = new Random();<br>
+                                    <b>Description: </b>The pseudo-random numbers generated are predictable. When the software generates predictable values in a context that requires unpredictability, it may be possible for an attacker to guess the next value that will be generated and use that guess to impersonate another user or access confidential information. To generate a cryptographically secure random number, such as the one suitable for creating a random password, use the RNGCryptoServiceProvider class or derive a class from System.Security.Cryptography.RandomNumberGenerator.https: //docs.microsoft.com/en-us/dotnet/ api / system.random? view = netframework-4.8<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Bug\MultiThreadingIssues.cs (85:40)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>Dictionaries.cs (431:24)<br>
+                                    <b>VulnerabilityID :</b>721f5dcee419532bf1f31fae80702a02<br>
+                                    <b>Method: </b>public string Key { get; set; }<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Dictionaries.cs (431:24)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>Indexers.cs (21:36)<br>
+                                    <b>VulnerabilityID :</b>4c816ddc5b96e88b871e33cde0598392<br>
+                                    <b>Method: </b>public string this[string key] { get { return null; }}<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\Indexers.cs (21:36)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>MapToAttributeTest.cs (22:20)<br>
+                                    <b>VulnerabilityID :</b>3f22474a78f9fcc508d10e75e1da1f8d<br>
+                                    <b>Method: </b>public string Key { get; set; }<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\MapToAttributeTest.cs (22:20)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>IncludedMappingShouldInheritBaseMappings.cs (35:20)<br>
+                                    <b>VulnerabilityID :</b>00955fc05e0206a4dd2114618a9c5772<br>
+                                    <b>Method: </b>public string Key { get; set; }<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\MappingInheritance\IncludedMappingShouldInheritBaseMappings.cs (35:20)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>IncludedMappingShouldInheritBaseMappings.cs (74:20)<br>
+                                    <b>VulnerabilityID :</b>679a486803f50d3c5610a99a558f0a22<br>
+                                    <b>Method: </b>public string Key { get; set; }<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>src\UnitTests\MappingInheritance\IncludedMappingShouldInheritBaseMappings.cs (74:20)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+        <div class="row" style="border-top: #dee2e6 1px solid;padding-top: 10px;">
+        <div class="col-12">
+            <p>Copyright 2020 insidersec.io</p>
+
+            <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+            <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

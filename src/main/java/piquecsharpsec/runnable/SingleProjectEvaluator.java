@@ -69,11 +69,12 @@ public class SingleProjectEvaluator {
         Path resources = Paths.get(prop.getProperty("blankqm.filepath"));
         resources = resources.toAbsolutePath().getParent();
 
-        // run roslynator and security code scan
+        // run roslynatorLoc, security code scan, and insider
         ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
        // ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
         ITool securityCodeScan = new SecurityCodeScanAnalyzer();
-        Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan).collect(Collectors.toSet());
+        ITool insider = new InsiderAnalyzer();
+        Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan, insider).collect(Collectors.toSet());
 
         Path outputPath = runEvaluator(projectRoot, resultsDir, qmLocation, tools);
         System.out.println("output: " + outputPath.getFileName());
