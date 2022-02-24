@@ -36,8 +36,8 @@ Running PIQUE-C#-Sec involves two main steps.
 ### Model Derivation
 First the model must be configured in the `src/main/resources/pique-csharp-sec.properties` file. Then, the model must be derived using a benchmark repository. This is done by running the `src/main/java/piquecsharpsec/runnable/QualityModelDeriver.java` file.
 
-### Binary Analysis
-Finally, the `src/main/java/piquecsharpsec/runnable/SingleProjectEvaluator.java` file may be run to analyze a binary. This will produce output in the `/out` folder. This can also be done through running the .jar file produced when the project is built. 
+### Project Evaluator
+Finally, the `src/main/java/piquecsharpsec/runnable/SingleProjectEvaluator.java` file may be run to analyze a C# source code project. This will produce output in the `/out` folder. This can also be done through running the .jar file produced when the project is built. 
 
 
 ## Notes
