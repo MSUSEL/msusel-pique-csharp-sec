@@ -22,7 +22,7 @@
     </div>
 	<div class='row'>
         <div class='col-12'>
-            <h6>Score Security 100/100 </h6>
+            <h6>Score Security 50/100 </h6>
 	</div>
 	<hr>
 
@@ -35,10 +35,10 @@
 					<table>
 						<tr><td>None</td><td>&nbsp; 0</td></tr>
 						<tr><td>Low</td><td>&nbsp; 0</td></tr>
-						<tr><td>Medium</td><td>&nbsp; 0</td></tr>
+						<tr><td>Medium</td><td>&nbsp; 1</td></tr>
 						<tr><td>High</td><td>&nbsp; 0</td></tr>
 						<tr><td>Critical</td><td>&nbsp; 0</td></tr>
-						<tr><td>Total</td><td>&nbsp; 0</td></tr>
+						<tr><td>Total</td><td>&nbsp; 1</td></tr>
 					</table>
 		</div>
 	</div>
@@ -57,6 +57,34 @@ If you are a developer, then you can contribute to the improvement of the softwa
 
     
 
+    
+    <div class='row'>
+        <div class='col-12'>
+            <h6>Vulnerabilities</h6>
+            <div class=''>
+                <table class='table table-sm' style='table-layout:fixed;'>
+                    <tbody>
+
+                    
+                        <tr>
+                            <td class='user-select-all'><p class='text-break'>
+                                    <b>CVSS: </b>5<br>
+									<b>Severity: </b><br>
+                                    <b>Class: </b>ReportServerReportReader.cs (82:144)<br>
+                                    <b>VulnerabilityID :</b>9ffb2e027700b5e070e3c6fa10996019<br>
+                                    <b>Method: </b>private async Task SetAuthCookie(HttpContext httpContext, HttpClient httpClient, HttpClientHandler httpClientHandler, string userName, string password)<br>
+                                    <b>Description: </b>The code uses standard strings and byte arrays to store sensitive transient data, such as passwords and private encryption keys, instead of the SecureString class which is more secure because it encrypts the data at rest https://docs.microsoft. com / en-us / dotnet / api / system.security.securestring? view = netframework-4.8.<br>
+                                    <b>ClassMessage: </b>ReportServerReportReader.cs (82:144)<br>
+                                    <b>Recomendation: </b><br>
+                                </p>
+                            </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     
         <div class="row" style="border-top: #dee2e6 1px solid;padding-top: 10px;">
         <div class="col-12">
