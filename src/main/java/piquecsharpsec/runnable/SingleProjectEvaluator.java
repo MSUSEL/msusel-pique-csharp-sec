@@ -52,8 +52,15 @@ public class SingleProjectEvaluator {
 
     private Project project;
 
+    public SingleProjectEvaluator(String propertiesPath){
+        init(propertiesPath);
+    }
 
     public SingleProjectEvaluator(){
+        init(null);
+    }
+
+    public void init(String propertiesPath){
         Properties prop = PiqueProperties.getProperties();
 
         Path projectRoot = Paths.get(prop.getProperty("project.root"));

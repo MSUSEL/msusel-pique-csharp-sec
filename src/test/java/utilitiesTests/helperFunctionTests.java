@@ -18,37 +18,6 @@ public class helperFunctionTests {
 
 
 	@Test
-	public void testCVEtoCWE() {
-		String cve = "CVE-2018-1010";
-		String cwe = helperFunctions.getCWE(cve)[0];
-		assert(cwe.equals("CWE-20")); //based off https://nvd.nist.gov/vuln/detail/CVE-2018-1010
-	}
-	
-	@Test
-	public void testNonsenseCVEtoCWE() {
-		String cve = "notacve";
-		String cwe = helperFunctions.getCWE(cve)[0];
-		System.out.print(cwe);
-		assert(cwe.contains("CVE not found"));
-	}
-	
-	@Test
-	public void testCMDLineOutput() {
-		try {
-			String[] cmd1 = {"cd"};
-			helperFunctions.getOutputFromProgram(cmd1,false); //windows
-		} catch (IOException e) {
-			try {
-				String[] cmd2 = {"pwd"};
-				helperFunctions.getOutputFromProgram(cmd2,false); //non-windows
-			}
-			catch (IOException e2) {
-				fail();
-			}
-		}
-	}
-	
-	@Test
 	public void testFileReadingDoesNotError() {
 		Properties prop = PiqueTestProperties.getProperties();
 		Path p = Paths.get(prop.getProperty("blankqm.filepath"));
@@ -76,8 +45,8 @@ public class helperFunctionTests {
 		Map<String,Diagnostic> map = helperFunctions.initializeDiagnostics("not a tool");
 		assert(map.values().size()==0);
 		
-		map = helperFunctions.initializeDiagnostics("yara-rules");
-		assert(map.values().size()==9);
+		map = helperFunctions.initializeDiagnostics("security-code-scan");
+		assert(map.values().size()==31);
 		
 		
 	}

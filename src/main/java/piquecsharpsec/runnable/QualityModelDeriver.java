@@ -59,11 +59,14 @@ public class QualityModelDeriver {
         new QualityModelDeriver();
     }
 
+    public QualityModelDeriver(String propertiesPath){
+        init(propertiesPath);
+    }
     public QualityModelDeriver(){
-        init();
+        init(null);
     }
 
-    private void init(){
+    private void init(String propertiesPath){
 
         Properties prop = PiqueProperties.getProperties();
 

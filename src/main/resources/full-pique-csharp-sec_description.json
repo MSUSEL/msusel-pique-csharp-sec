@@ -1,0 +1,667 @@
+{
+  "name": "Csharp Security Quality Model",
+  "additionalData" : { },
+  "global_config" : {
+    "benchmark_strategy" : "calibration.BinaryBenchmarker",
+    "normalizer" : "pique.evaluation.DefaultNormalizer",
+    "weights_strategy" : "pique.calibration.NaiveWeighter"
+  },
+  "factors": {
+    "tqi": {
+      "TQI": {
+        "description": "Total Security Index",
+        "children": {
+          "Confidentiality": {},
+          "Integrity": {},
+          "Non-repudiation": {},
+          "Authenticity": {},
+          "Accountability": {},
+          "Availability": {},
+          "Authorization": {}
+        }
+      }
+    },
+    "quality_aspects": {
+      "Confidentiality": {
+        "description": "Degree to which a product or system ensures that data are accessible only to those authorized to have access",
+        "children": {
+          "Cookies": {},
+          "View State": {},
+          "Access Control": {},
+          "Other": {}
+        }
+      },
+      "Integrity": {
+        "description": "Degree to which a system, product or component prevents unauthorized access to, or modification of, computer programs or data",
+        "children": {
+          "Injection": {},
+          "Request Validation": {},
+          "Access Control": {},
+          "Other": {}
+        }
+      },
+      "Non-repudiation": {
+        "description": "Degree to which actions or events can be proven to have taken place so that the events or actions cannot be repudiated later",
+        "children": {
+          "Cryptography": {},
+          "Other": {}
+        }
+      },
+      "Authenticity": {
+        "description": "Degree to which the identity of a subject or resource can be proved to be the one claimed",
+        "children": {
+          "Cryptography": {},
+          "Password Management": {},
+          "Access Control": {},
+          "Other": {}
+        }
+      },
+      "Accountability": {
+        "description": "Degree to which the actions of an entity can be traced uniquely to the entity",
+        "children": {
+          "Other": {}
+        }
+      },
+      "Availability": {
+        "description": "Degree to which a system, product or component operates as intended despite the presence of hardware or software faults",
+        "children": {
+          "Injection": {},
+          "View State": {},
+          "Request Validation": {},
+          "Other": {}
+        }
+      },
+      "Authorization": {
+        "description": "Individuals, entities, or processes only have access to data and processes they should",
+        "children": {
+          "Access Control": {},
+          "Other": {}
+        }
+      }
+    },
+    "product_factors": {
+      "Injection": {
+        "description": "Injection",
+        "children": {
+          "CWE-77": {},
+          "CWE-943": {},
+          "CWE-74": {},
+          "CWE-22": {},
+          "CWE-610": {}
+        }
+      },
+      "Cryptography": {
+        "description": "Cryptography",
+        "children": {
+          "CWE-295": {},
+          "CWE-338": {},
+          "CWE-327": {},
+          "CWE-310": {}
+        }
+      },
+      "Cookies": {
+        "description": "Cookies",
+        "children": {
+          "CWE-693": {},
+          "CWE-1004": {},
+          "CWE-538": {}
+        }
+      },
+      "View State": {
+        "description": "View State",
+        "children": {
+          "CWE-1173": {}
+        }
+      },
+      "Request Validation": {
+        "description": "Request Validation",
+        "children": {
+          "CWE-1173": {},
+          "CWE-707": {}
+        }
+      },
+      "Password Management": {
+        "description": "Password Management",
+        "children": {
+          "CWE-798": {},
+          "CWE-287": {}
+        }
+      },
+      "Access Control": {
+        "description": "Access Control",
+        "children": {
+          "CWE-668": {},
+          "CWE-922": {},
+          "CWE-693": {},
+          "CWE-756": {},
+          "CWE-119": {},
+          "CWE-345": {}
+        }
+      },
+      "Other": {
+        "description": "Other",
+        "children": {
+          "CWE-1173": {},
+          "CWE-284": {},
+          "CWE-345": {},
+          "CWE-601": {},
+          "CWE-913": {},
+          "CWE-489": {},
+          "CWE-1285": {},
+          "CWE-668": {},
+          "CWE-610": {}
+        }
+      }
+    }
+  },
+  "measures": {
+    "CWE-77": {
+      "description": "Improper Neutralization of Special Elements used in a Command (Command Injection)",
+      "positive": false,
+      "children": {
+        "CWE-78": {},
+        "SCS0001": {}
+      }
+    },
+    "CWE-943": {
+      "description": "Improper Neutralization of Special Elements in Data Query Logic",
+      "positive": false,
+      "children": {
+        "CWE-89": {},
+        "SCS0002": {},
+        "CWE-643": {},
+        "SCS0003": {},
+        "CWE-90": {},
+        "SCS0026": {},
+        "SCS0031": {}
+      }
+    },
+    "CWE-74": {
+      "description": "Improper Neutralization of Special Elements in Output Used by a Downstream Component (Injection)",
+      "positive": false,
+      "children": {
+        "CWE-79": {},
+        "SCS0029": {}
+      }
+    },
+    "CWE-22": {
+      "description": "Improper Limitation of a Pathname to a Restricted Directory (Path Traversal)",
+      "positive": false,
+      "children": {
+        "SCS0018": {}
+      }
+    },
+    "CWE-610": {
+      "description": "Externally Controlled Reference to a Resource in Another Sphere",
+      "positive": false,
+      "children": {
+        "CWE-611": {},
+        "SCS0011": {},
+        "SCS0007": {}
+      }
+    },
+    "CWE-295": {
+      "description": "Improper Certificate Validation",
+      "positive": false,
+      "children": {
+        "SCS0004": {}
+      }
+    },
+    "CWE-338": {
+      "description": "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)",
+      "positive": false,
+      "children": {
+        "SCS0005": {}
+      }
+    },
+    "CWE-327": {
+      "description": "Use of a Broken or Risky Cryptographic Algorithm",
+      "positive": false,
+      "children": {
+        "SCS0006": {},
+        "SCS0010": {},
+        "SCS0013": {}
+      }
+    },
+    "CWE-693": {
+      "description": "Protection Mechanism Failure",
+      "positive": false,
+      "children": {
+        "CWE-614": {},
+        "SCS0008": {},
+        "CWE-330": {},
+        "CWE-311": {},
+        "CWE-326": {}
+      }
+    },
+    "CWE-1004": {
+      "description": "Sensitive Cookie Without 'HttpOnly' Flag",
+      "positive": false,
+      "children": {
+        "SCS0009": {}
+      }
+    },
+    "CWE-1173": {
+      "description": "Improper Use of Validation Framework",
+      "positive": false,
+      "children": {
+        "CWE-554": {},
+        "SCS0023": {},
+        "SCS0024": {},
+        "SCS0017": {},
+        "SCS0021": {},
+        "SCS0030": {},
+        "SCS0022": {}
+
+      }
+    },
+    "CWE-707": {
+      "description": "Improper Neutralization",
+      "positive": false,
+      "children": {
+        "CWE-20": {}
+
+      }
+    },
+    "CWE-798": {
+      "description": "Use of Hard-coded Credentials",
+      "positive": false,
+      "children": {
+        "CWE-259": {},
+        "SCS0015": {}
+      }
+    },
+    "CWE-287": {
+      "description": "Improper Authentication",
+      "positive": false,
+      "children": {
+        "SCS0034": {},
+        "SCS0032": {},
+        "SCS0033": {},
+        "CWE-521": {}
+      }
+    },
+    "CWE-284": {
+      "description": "Improper Access Control",
+      "positive": false,
+      "children": {
+        "SCS0012": {}
+      }
+    },
+    "CWE-345": {
+      "description": "Insufficient Verification of Data Authenticity",
+      "positive": false,
+      "children": {
+        "SCS0016": {},
+        "CWE-352": {}
+      }
+    },
+    "CWE-601": {
+      "description": "URL Redirection to Untrusted Site (Open Redirect)",
+      "positive": false,
+      "children": {
+        "SCS0027": {}
+      }
+    },
+    "CWE-913": {
+      "description": "Improper Control of Dynamically-Managed Code Resources",
+      "positive": false,
+      "children": {
+        "SCS0028": {},
+        "CWE-502": {}
+      }
+    },
+    "CWE-668": {
+      "description": "Exposure of Resource to Wrong Sphere",
+      "positive": false,
+      "children": {
+        "SCS0016": {},
+        "CWE-524": {},
+        "SCS0019": {},
+        "CWE-377": {},
+        "CWE-23": {},
+        "CWE-200": {}
+      }
+    },
+    "CWE-489": {
+      "description": "Active Debug Code",
+      "positive": false,
+      "children": {
+        "CWE-11": {}
+      }
+    },
+    "CWE-1285": {
+      "description": "Improper Validation of Specified Index, Position, or Offset in Input",
+      "positive": false,
+      "children": {
+        "CWE-129": {}
+      }
+    },
+    "CWE-922": {
+      "description": "Insecure Storage of Sensitive Information",
+      "positive": false,
+      "children": {
+        "CWE-316": {},
+        "CWE-312": {}
+      }
+    },
+    "CWE-756": {
+      "description": "Missing Custom Error Page",
+      "positive": false,
+      "children": {
+        "CWE-12": {}
+      }
+    },
+    "CWE-119": {
+      "description": "Improper Restriction of Operations within the Bounds of a Memory Buffer",
+      "positive": false,
+      "children": {
+        "CWE-787": {}
+      }
+    },
+    "CWE-538": {
+      "description": "Insertion of Sensitive Information into Externally-Accessible File or Directory",
+      "positive": false,
+      "children": {
+        "CWE-532": {}
+      }
+    }
+  },
+  "diagnostics": {
+    "SCS0001": {
+      "description": "Command Injection",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0002": {
+      "description": "SQL Injection ",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0003": {
+      "description": "XPath Injection",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0007": {
+      "description": "XML eXternal Entity Injection (XXE)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0018": {
+      "description": "Path Traversal",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0029": {
+      "description": "Cross-Site Scripting (XSS)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0026": {
+      "description": "LDAP Distinguished Name Injection",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0031": {
+      "description": "LDAP Filter Injection",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0004": {
+      "description": "Certificate Validation Disabled",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "security-code-scan"
+    },
+    "SCS0005": {
+      "description": "Weak Random Number Generator",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0006": {
+      "description": "Weak Hashing Function",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0010": {
+      "description": "Weak Cipher Algorithm",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0013": {
+      "description": "Potential Usage of Weak CipherMode Mode",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0008": {
+      "description": "Cookie Without SSL Flag",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "security-code-scan"
+    },
+    "SCS0009": {
+      "description": "Cookie Without HttpOnly Flag",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "security-code-scan"
+    },
+    "SCS0023": {
+      "description": "View State Not Encrypted",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "security-code-scan"
+    },
+    "SCS0024": {
+      "description": "View State MAC Disabled",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0017": {
+      "description": "Request Validation Disabled (Attribute)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0021": {
+      "description": "Request Validation Disabled (Configuration File)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0030": {
+      "description": "Request Validation is Enabled Only for Pages (Configuration File)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0015": {
+      "description": "Hardcoded Password",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0034": {
+      "description": "Password RequiredLength Not Set",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0032": {
+      "description": "Password RequiredLength Too Small",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0033": {
+      "description": "Password Complexity",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0011": {
+      "description": "Unsafe XSLT Setting Used",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0012": {
+      "description": "Controller Method is Potentially Vulnerable to Authorization Bypass",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0016": {
+      "description": "Cross-Site Request Forgery (CSRF)",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "security-code-scan"
+    },
+    "SCS0019": {
+      "description": "OutputCache Conflict",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0022": {
+      "description": "Event Validation Disabled",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0027": {
+      "description": "Open Redirect",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "SCS0028": {
+      "description": "Insecure Deserialization",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "security-code-scan"
+    },
+    "CWE-78": {
+      "description": "Improper Neutralization of Special Elements used in an OS Command (OS Injection)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-89": {
+      "description": "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "insider"
+    },
+    "CWE-643": {
+      "description": "Improper Neutralization of Data within XPath Expressions (XPath Injection)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-90": {
+      "description": "Improper Neutralization of Special Elements used in an LDAP Query (LDAP Injection)",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "insider"
+    },
+    "CWE-79": {
+      "description": "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-611": {
+      "description": "Improper Restriction of XML External Entity Reference (XXE)",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "insider"
+    },
+    "CWE-310": {
+      "description": "Category: Cryptographic Issues",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-259": {
+      "description": "Use of a Hard-coded Password",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-521": {
+      "description": "Weak Password Requirements",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-614": {
+      "description": "Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-330": {
+      "description": "Use of Insufficiently Random Values",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-326": {
+      "description": "Inadequate Encryption Strength",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-311": {
+      "description": "Missing Encryption of Sensitive Data",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-554": {
+      "description": "ASP.NET Misconfiguration: Not Using Input Validation Framework",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-20": {
+      "description": "Improper Input Validation",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-524": {
+      "description": "Use of Cache Containing Sensitive Information",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-377": {
+      "description": "Insecure Temporary File",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-23": {
+      "description": "Relative Path Traversal",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-200": {
+      "description": "Exposure of Sensitive Information to Unauthorized Actor",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-502": {
+      "description": "Deserialization of Untrusted Data",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-11": {
+      "description": "ASP.NET Misconfiguration: Creating Debug Binary",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-129": {
+      "description": "Improper Validation of Array Index",
+      "utility_function" : "pique.evaluation.DefaultUtility",
+      "toolName": "insider"
+    },
+    "CWE-316": {
+      "description": "Cleartext Storage of Sensitive Information in Memory",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-312": {
+      "description": "Cleartext Storage of Sensitive Information",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-12": {
+      "description": "ASP.NET Misconfiguration: Missing Custom Error Page",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-787": {
+      "description": "Out-of-bounds Write",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-352": {
+      "description": "Cross-Site Request Forgery (CSRF)",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    },
+    "CWE-532": {
+      "description": "Insertion of Sensitive Information into Log File",
+      "utility_function" : "pique.evaluation.GAMUtilityFunction",
+      "toolName": "insider"
+    }
+  }
+}
