@@ -14,8 +14,8 @@ ___
 ## Build Environment
 - Java 8
 - Maven
-- Python 3.7+
-- Docker
+- MSBuild
+- R 3.6.1+
 - [PIQUE](https://github.com/MSUSEL/msusel-pique)
 ___
 ## Building
@@ -24,11 +24,6 @@ ___
 3. Derive the model as defined in the [Model Derivation](#model-derivation) section.
 4. Run `mvn package` from `<project_root>`.
 PIQUE-C#-Sec is now available as a .jar file in the `target` folder. 
-___
-## Run Environment
-- Java 8
-- Python 3.7+
-- Docker
 ___
 ## Running
 Running PIQUE-C#-Sec involves two main steps. 
