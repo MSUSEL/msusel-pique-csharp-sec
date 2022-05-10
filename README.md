@@ -1,22 +1,21 @@
 # msusel-pique-csharp-sec
 ## Introduction
-This project is an operationalized PIQUE model for the assessment of security quality in binary files. 
+This project is an operationalized PIQUE model for the assessment of security quality in C# source code projects. 
 
 PIQUE is not yet added to the Maven central repository, so this project will need to be [built](#building) and installed (via Maven) before it can be used as a library. 
 ___
 ## Tools
-These will be automatically packaged with the PIQUE-Bin repository and .jar file, or installed through python/docker.
+These will be automatically packaged with the PIQUE-C#-Sec repository and .jar file, or installed through python/docker.
 
-- [YARA](http://virustotal.github.io/yara/) and the [Yara-Rules repository](https://github.com/Yara-Rules/rules)
-- [CVE-Bin-Tool](https://github.com/intel/cve-bin-tool)
-- [CWE_Checker](https://github.com/fkie-cad/cwe_checker)
+- [Security Code Scan](https://security-code-scan.github.io/)
+- [Insider](https://github.com/insidersec/insider)
 ___
 
 ## Build Environment
 - Java 8
 - Maven
-- Python 3.7+
-- Docker
+- MSBuild
+- R 3.6.1+
 - [PIQUE](https://github.com/MSUSEL/msusel-pique)
 ___
 ## Building
@@ -24,21 +23,16 @@ ___
 2. Clone repository into `<project_root>` folder.
 3. Derive the model as defined in the [Model Derivation](#model-derivation) section.
 4. Run `mvn package` from `<project_root>`.
-PIQUE-Bin is now available as a .jar file in the `target` folder. 
-___
-## Run Environment
-- Java 8
-- Python 3.7+
-- Docker
+PIQUE-C#-Sec is now available as a .jar file in the `target` folder. 
 ___
 ## Running
-Running PIQUE-Bin involves two main steps. 
+Running PIQUE-C#-Sec involves two main steps. 
 
 ### Model Derivation
-First the model must be configured in the `src/main/resources/pique-bin.properties` file. Then, the model must be derived using a benchmark repository. This is done by running the `src/main/java/piquebinaries/runnable/QualityModelDeriver.java` file.
+First the model must be configured in the `src/main/resources/pique-csharp-sec.properties` file. Then, the model must be derived using a benchmark repository. This is done by running the `src/main/java/piquecsharpsec/runnable/QualityModelDeriver.java` file.
 
-### Binary Analysis
-Finally, the `src/main/java/piquebinaries/runnable/SingleProjectEvaluator.java` file may be run to analyze a binary. This will produce output in the `/out` folder. This can also be done through running the .jar file produced when the project is built. 
+### Project Evaluator
+Finally, the `src/main/java/piquecsharpsec/runnable/SingleProjectEvaluator.java` file may be run to analyze a C# source code project. This will produce output in the `/out` folder. This can also be done through running the .jar file produced when the project is built. 
 
 
 ## Notes
