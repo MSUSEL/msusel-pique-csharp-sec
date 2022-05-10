@@ -34,6 +34,22 @@ First the model must be configured in the `src/main/resources/pique-csharp-sec.p
 ### Project Evaluator
 Finally, the `src/main/java/piquecsharpsec/runnable/SingleProjectEvaluator.java` file may be run to analyze a C# source code project. This will produce output in the `/out` folder. This can also be done through running the .jar file produced when the project is built. 
 
+## Deployment - Run quality assessment via a JAR file
+
+### Downloads
+- Step 1: Download [msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar](https://github.com/MSUSEL/msusel-pique-csharp-sec/blob/main/target/msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar) into a directory that contains the project needed to be analyzed.
+- Setp 2: Download [pique-csharp-sec.properties](https://github.com/MSUSEL/msusel-pique-csharp-sec/blob/main/src/main/resources/pique-csharp-sec.properties) into a directory that contains the project needed to be analyzed.
+- Step 3: Download [full-pique-csharp-sec_description.json](https://github.com/MSUSEL/msusel-pique-csharp-sec/blob/main/src/main/resources/full-pique-csharp-sec_description.json) into a directory that contains the project needed to be analyzed.
+- Step 4: Download [csharp-opensource](https://github.com/MSUSEL/benchmarks/tree/main/csharp-opensource) benchmark repository into a directory that contains the project needed to be analyzed.
+
+### Pointers
+- Step 5: Point project.root= to your desired project in pique-csharp-sec.properties file.
+- Step 6: Point benchmark.rep= to your desired benchmark repository (csharp-opensource) in pique-properties.properties file.
+
+### Run
+- Step 7 (Model Derivaton): run `java -jar msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar -d` to derive a derived model.
+- Step 8 (Project Evaluator): run `java -jar msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar -e` to evaluate.
+- Step 9: Find the evaluated result file in /out directory.
 
 ## Notes
 Currently, we have not done testing to ensure that this will run on Linux or Mac. Additionally, a space in the path at any point appears to break the system, so if you are running into trouble that could be the cause.
