@@ -55,12 +55,10 @@ public class InsiderAnalyzer extends Tool implements ITool {
 
         projectLocation = projectLocation.toAbsolutePath();
         String sep = File.separator;
-        //File tempResults = new File(System.getProperty("user.dir") +"/out/insider_output.json");
         File tempResults = new File("report.json");
-        //tempResults.delete(); // clear out the last output. May want to change this to rename rather than delete.
-        //tempResults.getParentFile().mkdirs();
 
-        /*
+        /* this code not required for Insider tool
+
         // Append .sln or .csproj file to path
         // TODO: refactor to method and find better way that doesn't use stacked if statements.
         Set<String> targetFiles = FileUtility.findFileNamesFromExtension(projectLocation, ".sln", 1);
@@ -99,60 +97,6 @@ public class InsiderAnalyzer extends Tool implements ITool {
 
         return tempResults.toPath();
 
-/*
-
-        String command = "./insider";
-        String techFlag = "-tech";
-        String language = "csharp";
-        String targetFlag = "-target";
-        //String output = "--export=" + tempResults.toString();
-        String target = projectLocation.toAbsolutePath().toString();
-        //String verboseFlag = "-v";
-
-        if (!System.getProperty("os.name").contains("Windows")) {
-            throw new RuntimeException("Insider C# analysis not supported on non-Windows machines.");
-        }
-
-        // Run the tool
-        System.out.println("insider: beginning static analysis.\n\tTarget: " + projectLocation.toString());
-
-        Process p;
-        try {
-            p = new ProcessBuilder(command, techFlag, language, targetFlag, target).start();
-            System.out.println(p);
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            String line;
-
-            System.out.println("here0");
-            System.out.println("reader: " + stdInput);
-            //System.out.println("here1 " + stdInput.readLine());
-
-            if (stdInput.readLine() == null) {
-                System.out.println("null");
-            }
-            else {
-                System.out.println("not null");
-            }
-
-            //while ((line = stdInput.readLine()) != null) {
-            //    System.out.println("insider: " + line);
-            //}
-
-            while ((stdInput.read() != -1)) {
-                //line = stdInput.readLine();
-                System.out.println("insider: " );
-            }
-
-            p.waitFor();
-        }
-        catch (IOException | InterruptedException e) { e.printStackTrace(); }
-
-        // Assert result file was created
-        if (!tempResults.isFile()) {
-            throw new RuntimeException("Insider.analyze() did not generate a results file in the expected location");
-        }
-
-        return tempResults.toPath();*/
     }
 
     @Override
@@ -197,7 +141,6 @@ public class InsiderAnalyzer extends Tool implements ITool {
 
                         JSONObject jsonFinding = (JSONObject) jsonResults.get(i);
                         String findingName = ruleId;
-                        //System.out.println("finding Name: " + findingName);
 
                         Finding finding = new Finding("", i, 0, 1); //might need to change. Passing 'i' as line number to ensure findings have different names
                         Diagnostic relDiag = diagnostics.get(findingName);
@@ -230,7 +173,6 @@ public class InsiderAnalyzer extends Tool implements ITool {
 
     @Override
     public Path initialize(Path toolRoot) {
-        // return securityCodeScanInitializeToTempFolder();
         return null;
     }
 

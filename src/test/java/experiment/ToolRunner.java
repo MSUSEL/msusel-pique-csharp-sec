@@ -28,18 +28,14 @@ public class ToolRunner {
 
         // Initialize objects
         Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
-        //? next line?
         //benchmarkRepo = Paths.get(benchmarkRepo.toFile().getParent()+"/benchmark/");
-		benchmarkRepo = Paths.get(benchmarkRepo.toFile().getParent()+"/bench-csharp-combo/");
 
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 
         //init tools
-		ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-		//ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
 		ITool securityCodeScan = new SecurityCodeScanAnalyzer();
 		ITool insider = new InsiderAnalyzer();
-		Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan, insider).collect(Collectors.toSet());
+		Set<ITool> tools = Stream.of(securityCodeScan, insider).collect(Collectors.toSet());
 
         File[] files = benchmarkRepo.toFile().listFiles();
         Path outputDest = Paths.get(prop.getProperty("results.directory"));
@@ -48,11 +44,9 @@ public class ToolRunner {
         //init diagnostic names
 		Set<String> securityCodeScanDiags = securityCodeScan.parseAnalysis(securityCodeScan.analyze(files[0].toPath())).keySet();
 		Set<String> insiderDiags = insider.parseAnalysis(insider.analyze(files[0].toPath())).keySet();
-		//Set<String> cveDiags = cveBinTool.parseAnalysis(cveBinTool.analyze(files[0].toPath())).keySet();
         List<String> allDiags = new ArrayList<String>();
         allDiags.addAll(securityCodeScanDiags);
         allDiags.addAll(insiderDiags);
-        //allDiags.addAll(cveDiags);
 
         appendToFile(outputFile,",");
 
@@ -70,11 +64,11 @@ public class ToolRunner {
 
 		boolean check = false;
 		for (File x : files) {
-			if (!check) { //use this to start at a certain file in case execution is interrupted
-				if (x.getName().equals("hashdeep")) check = true;
-				else continue;
-			}
-			System.out.println(x.getName());
+//			if (!check) { //use this to start at a certain file in case execution is interrupted
+//				if (x.getName().equals("hashdeep")) check = true;
+//				else continue;
+//			}
+			System.out.println("Project name: " + x.getName());
 			appendToFile(outputFile,x.getName() + ",");
 			Map<String,Integer> findingCounts = getMapOfZeros(allDiags);
 			tools.forEach(tool -> {

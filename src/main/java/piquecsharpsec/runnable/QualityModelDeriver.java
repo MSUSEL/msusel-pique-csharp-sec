@@ -22,6 +22,7 @@
  */
 package piquecsharpsec.runnable;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -40,6 +41,7 @@ import pique.model.ModelNode;
 import pique.model.QualityModel;
 import pique.model.QualityModelExport;
 import pique.model.QualityModelImport;
+import pique.utility.FileUtility;
 import tool.*;
 import utilities.PiqueProperties;
 
@@ -69,7 +71,6 @@ public class QualityModelDeriver {
         Path derivedModelFilePath = Paths.get(prop.getProperty("results.directory"));
 
         // Initialize objects
-        //String projectRootFlag = "";
         String projectRootFlag = prop.getProperty("target.flag");
         Path benchmarkRepo = Paths.get(prop.getProperty("benchmark.repo"));
 
@@ -77,7 +78,6 @@ public class QualityModelDeriver {
 
         // run roslynatorLoc, security code scan, and insider
         ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-        //ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
         ITool securityCodeScan = new SecurityCodeScanAnalyzer();
         ITool insider = new InsiderAnalyzer();
         Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan, insider).collect(Collectors.toSet());
@@ -92,7 +92,6 @@ public class QualityModelDeriver {
         		.exportToJson(derivedQualityModel
         				.getName(), derivedModelFilePath);
 
-        //changing the derived model file name removed link in output?
         System.out.println("Quality Model derivation finished. You can find the file at " + jsonOutput.toAbsolutePath().toString());
     }
 

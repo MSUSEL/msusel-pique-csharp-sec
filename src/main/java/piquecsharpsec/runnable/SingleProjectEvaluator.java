@@ -71,7 +71,6 @@ public class SingleProjectEvaluator {
 
         // run roslynatorLoc, security code scan, and insider
         ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-       // ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
         ITool securityCodeScan = new SecurityCodeScanAnalyzer();
         ITool insider = new InsiderAnalyzer();
         Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan, insider).collect(Collectors.toSet());

@@ -47,7 +47,8 @@ public class FakeFindingWrapper extends Tool implements ITool {
 	private String targetDiagnosticName;
 	/**
 	 * @param realTool tool that this class will run and add a finding to
-	 * @param maxSeverity maximum severity of the tool. Will make the severity of finding between 1 and maxVal.
+	 * @param severity maximum severity of the tool. Will make the severity of finding between 1 and maxVal.
+	 *                 Payton: Changed above from maxSeverity to severity
 	 */
 	public FakeFindingWrapper(ITool realTool, int severity, String diagnosticName) {
 		super(realTool.getName(), null);

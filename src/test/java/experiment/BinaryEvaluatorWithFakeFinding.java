@@ -38,10 +38,7 @@ import pique.evaluation.Project;
 import pique.model.Diagnostic;
 import pique.model.QualityModel;
 import pique.model.QualityModelImport;
-import tool.InsiderAnalyzer;
-import tool.RandomFakeFindingWrapper;
-import tool.RoslynatorLoc;
-import tool.SecurityCodeScanAnalyzer;
+import tool.*;
 import utilities.PiqueProperties;
 
 /**
@@ -65,23 +62,16 @@ public class BinaryEvaluatorWithFakeFinding {
         Path resultsDir = Paths.get(prop.getProperty("results.directory"));
         resultsDir = Paths.get(resultsDir.toString() + "/test/" + LocalDate.now());
 
-        Path qmLocation = Paths.get("out/BinarySecurityQualityModelCWE-699.json");
+        Path qmLocation = Paths.get("out/CsharpSecurityQualityModel.json");
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 
         //init tools
-        ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-        //ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
         ITool securityCodeScan = new SecurityCodeScanAnalyzer();
-        //TODO add fake tool here
-        //ITool fakeTool = new RandomFakeFindingWrapper()
         ITool insider = new InsiderAnalyzer();
-        Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan, insider).collect(Collectors.toSet());
+        //TODO add fake tool here
+        ITool fakeTool = new FakeFindingWrapper(securityCodeScan, 1, "SCS0019");
+        Set<ITool> tools = Stream.of(securityCodeScan, insider, fakeTool).collect(Collectors.toSet());
 
-//        ITool cvebintool = new CVEBinToolWrapper();
-//        ITool cveBinToolAndFake = new RandomFakeFindingWrapper(cvebintool,10);
-//        ITool cweCheckerTool = new CWECheckerToolWrapper();
-//        ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
-//        Set<ITool> tools = Stream.of(cveBinToolAndFake,cweCheckerTool, yaraRulesWrapper).collect(Collectors.toSet());
 
         Path outputPath = runEvaluator(projectRoot, resultsDir, qmLocation, tools);
         System.out.println("output: " + outputPath.getFileName());

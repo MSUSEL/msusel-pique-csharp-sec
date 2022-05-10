@@ -58,7 +58,6 @@ public class SecurityCodeScanAnalyzer extends Tool implements ITool {
         projectLocation = projectLocation.toAbsolutePath();
         String sep = File.separator;
         File tempResults = new File(System.getProperty("user.dir") +"/out/security_code_scan_output.json");
-        //tempResults.delete(); // clear out the last output. May want to change this to rename rather than delete.
         tempResults.getParentFile().mkdirs();
 
         // Append .sln or .csproj file to path

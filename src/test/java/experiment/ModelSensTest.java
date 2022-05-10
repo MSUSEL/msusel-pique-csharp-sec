@@ -70,21 +70,28 @@ public class ModelSensTest {
 
         String resultsDirString = (resultsDir.toString() + "/sensAnalysis/" + LocalDateTime.now()).replaceAll("[^a-zA-Z0-9\\/]", "");
         resultsDir = Paths.get(resultsDirString);
-        Path qmLocation = Paths.get("out/BinarySecurityQualityModelCWE-699.json");
+        Path qmLocation = Paths.get("out/CsharpSecurityQualityModel.json");
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 
         File dataFile = Paths.get(resultsDir.getParent().toAbsolutePath().toString() + "/DataCollection.csv").toFile();
 
         //init tools
-        ITool roslynatorLoc = new RoslynatorLoc(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
-        //ITool roslynator = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
         ITool securityCodeScan = new SecurityCodeScanAnalyzer();
         ITool insider = new InsiderAnalyzer();
-        Set<ITool> tools = Stream.of(roslynatorLoc, securityCodeScan, insider).collect(Collectors.toSet());
+        Set<ITool> tools = Stream.of(securityCodeScan, insider).collect(Collectors.toSet());
 
         Project outputProj = runEvaluator(projectRoot, resultsDir, qmLocation, tools);
         QualityModel evaluatedQM = outputProj.getQualityModel();
         BigDecimal originalTQI = evaluatedQM.getTqi().getValue();
+
+        //added to also report security aspects in addition to TSI
+        BigDecimal originalAuthenticity = evaluatedQM.getQualityAspect("Authenticity").getValue();
+        BigDecimal originalAvailability = evaluatedQM.getQualityAspect("Availability").getValue();
+        BigDecimal originalAuthorization = evaluatedQM.getQualityAspect("Authorization").getValue();
+        BigDecimal originalConfidentiality = evaluatedQM.getQualityAspect("Confidentiality").getValue();
+        BigDecimal originalAccountability = evaluatedQM.getQualityAspect("Accountability").getValue();
+        BigDecimal originalNonrepudiation = evaluatedQM.getQualityAspect("Non-repudiation").getValue();
+        BigDecimal originalIntegrity = evaluatedQM.getQualityAspect("Integrity").getValue();
 
         System.out.println("Original TQI: " + originalTQI);
 
@@ -94,7 +101,6 @@ public class ModelSensTest {
         for (ModelNode d : diagnostics) {
         	securityCodeScan = new SecurityCodeScanAnalyzer();
             insider = new InsiderAnalyzer();
-           // cveBinTool = new CVEBinToolWrapper();
 
         	String toolName = ((Diagnostic)d).getToolName();
 
@@ -111,7 +117,32 @@ public class ModelSensTest {
             BigDecimal tqi = evaluatedQM.getTqi().getValue();
             BigDecimal tqiDiff = originalTQI.subtract(tqi);
 
-            String strToAppend = d.getName()+", "+tqiDiff;
+            //added to report security aspects in addition to TSI
+            BigDecimal authenticity = evaluatedQM.getQualityAspect("Authenticity").getValue();
+            BigDecimal authenticityDiff = originalAuthenticity.subtract(authenticity);
+
+            BigDecimal availability = evaluatedQM.getQualityAspect("Availability").getValue();
+            BigDecimal availabilityDiff = originalAvailability.subtract(availability);
+
+            BigDecimal authorization = evaluatedQM.getQualityAspect("Authorization").getValue();
+            BigDecimal authorizationDiff = originalAuthorization.subtract(authorization);
+
+            BigDecimal confidentiality = evaluatedQM.getQualityAspect("Confidentiality").getValue();
+            BigDecimal confidentialityDiff = originalConfidentiality.subtract(confidentiality);
+
+            BigDecimal accountability = evaluatedQM.getQualityAspect("Accountability").getValue();
+            BigDecimal accountabilityDiff = originalAccountability.subtract(accountability);
+
+            BigDecimal nonrepudation = evaluatedQM.getQualityAspect("Non-repudiation").getValue();
+            BigDecimal nonrepudiationDiff = originalNonrepudiation.subtract(nonrepudation);
+
+            BigDecimal integrity = evaluatedQM.getQualityAspect("Integrity").getValue();
+            BigDecimal integrityDiff = originalIntegrity.subtract(integrity);
+
+            //String strToAppend = d.getName()+", "+tqiDiff;
+            String strToAppend = d.getName()+", "+tqiDiff+", "+authenticityDiff+", "+availabilityDiff+", "+authorizationDiff+", "+confidentialityDiff+", "+accountabilityDiff+", "+nonrepudiationDiff+", "+integrityDiff;
+
+
             System.out.println(strToAppend);
             System.out.println("New tqi: " + tqi);
 
