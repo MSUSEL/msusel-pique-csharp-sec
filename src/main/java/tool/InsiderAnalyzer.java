@@ -14,6 +14,7 @@ import pique.evaluation.DefaultDiagnosticEvaluator;
 import pique.model.Diagnostic;
 import pique.model.Finding;
 import pique.utility.FileUtility;
+import utilities.PiqueProperties;
 import utilities.helperFunctions;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -26,6 +27,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 
 /**
@@ -57,33 +59,14 @@ public class InsiderAnalyzer extends Tool implements ITool {
         String sep = File.separator;
         File tempResults = new File("report.json");
 
-        /* this code not required for Insider tool
-
-        // Append .sln or .csproj file to path
-        // TODO: refactor to method and find better way that doesn't use stacked if statements.
-        Set<String> targetFiles = FileUtility.findFileNamesFromExtension(projectLocation, ".sln", 1);
-        if (targetFiles.size() == 1) {
-            projectLocation = Paths.get(projectLocation.toString(), targetFiles.iterator().next() + ".sln");
-        }
-        else if (targetFiles.size() > 1) {
-            throw new RuntimeException("More than one .sln file exists in the give path root directory. " +
-                    "Ensure the directory has only one .sln file to target.");
-        }
-        else {
-            targetFiles = FileUtility.findFileNamesFromExtension(projectLocation, ".csproj", 1);
-            if (targetFiles.size() == 1) {
-                projectLocation = Paths.get(projectLocation.toString(), targetFiles.iterator().next() + ".csproj");
-            }
-            else if (targetFiles.size() > 1) {
-                throw new RuntimeException("A .sln file not found and more than one .csproj file exists in the give path root directory. " +
-                        "Ensure the directory has only one .csproj file to target.");
-            }
-        }*/
+        /* There was previously a code block here that appends .sln or .csproj to the path. It is not required for this tool and has been deleted.
+        This code is still located in SecurityCodeScanAnalyzer.java if it needs to be referenced in the future. */
 
         //this method of giving the command line pieces modeled from Andrew Johnson's PIQUE-Bin, the CVEBinToolWrapper class
 
+        String toolPath = PiqueProperties.getProperties().getProperty("tool.insider");
         //command for CLI call
-        String[] cmd = {"./insider",
+        String[] cmd = {toolPath,
                 "-tech", "csharp",
                 "-target",
                 projectLocation.toAbsolutePath().toString()};

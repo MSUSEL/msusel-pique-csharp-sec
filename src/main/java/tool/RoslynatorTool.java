@@ -2,6 +2,7 @@ package tool;
 
 import pique.analysis.Tool;
 import pique.utility.FileUtility;
+import pique.utility.PiqueProperties;
 
 import java.io.File;
 import java.net.URISyntaxException;
@@ -47,6 +48,7 @@ public abstract class RoslynatorTool extends Tool {
 
         setToolRoot(Paths.get(tempResourceDirectory.toString(), "Roslynator"));
         //return Paths.get(getToolRoot().toString(), "Roslynator", "Roslynator.exe");
-        return Paths.get(getToolRoot().toString(), "bin", "Roslynator.exe");
+        //return Paths.get(getToolRoot().toString(), "bin", "Roslynator.exe");
+        return Paths.get(PiqueProperties.getProperties().getProperty("roslynator.tool.root"));
     }
 }

@@ -30,6 +30,7 @@ import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Properties;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import pique.analysis.Tool;
@@ -39,11 +40,11 @@ import utilities.PiqueProperties;
 
 public class RoslynatorAnalyzerTest {
 
-
+    @Ignore
     @Test
     public void ToolShouldHaveFindingsOnCodeWithDiagnostics() {
         Properties prop = PiqueProperties.getProperties();
-        Tool roslynatorAnalyzer = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.bin")));
+        Tool roslynatorAnalyzer = new RoslynatorAnalyzer(Paths.get(prop.getProperty("roslynator.tool.root")), Paths.get(prop.getProperty("msbuild.roslynator")));
 
         Path testBin = Paths.get("src/test/resources/benchmark/systemd-hwdb");
 

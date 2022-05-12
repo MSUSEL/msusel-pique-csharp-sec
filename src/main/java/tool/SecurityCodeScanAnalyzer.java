@@ -14,6 +14,7 @@ import pique.evaluation.DefaultDiagnosticEvaluator;
 import pique.model.Diagnostic;
 import pique.model.Finding;
 import pique.utility.FileUtility;
+import utilities.PiqueProperties;
 import utilities.helperFunctions;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -83,8 +84,11 @@ public class SecurityCodeScanAnalyzer extends Tool implements ITool {
 
         //this method of giving the command line pieces modeled from David Rice's PIQUE-Csharp, the RoslynatorAnalyzer class
 
+
+        String toolPath = PiqueProperties.getProperties().getProperty("tool.securitycodescan");
+
         //strings for CLI call
-        String command = "security-scan";
+       /* String command = toolPath;
         String ignore = "--ignore-msbuild-errors";
         String output = "--export=" + tempResults.toString();
         String target = projectLocation.toAbsolutePath().toString();
@@ -113,6 +117,18 @@ public class SecurityCodeScanAnalyzer extends Tool implements ITool {
         // Assert result file was created
         if (!tempResults.isFile()) {
             throw new RuntimeException("SecurityCodeScanAnalyzer.analyze() did not generate a results file in the expected location");
+        }*/
+
+        String[] cmd = {toolPath,
+                "--ignore-msbuild-errors", "--export="+
+                tempResults.toString(),
+                projectLocation.toAbsolutePath().toString()};
+
+        try {
+            helperFunctions.getOutputFromProgram(cmd,true);
+
+        } catch (IOException  e) {
+            e.printStackTrace();
         }
 
         return tempResults.toPath();

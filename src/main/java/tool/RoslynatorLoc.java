@@ -5,6 +5,8 @@ import pique.evaluation.DefaultDiagnosticEvaluator;
 import pique.model.Diagnostic;
 import pique.model.Finding;
 import pique.utility.FileUtility;
+import utilities.PiqueProperties;
+import utilities.helperFunctions;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -39,7 +41,8 @@ public class RoslynatorLoc extends RoslynatorTool implements ITool {
      */
     public RoslynatorLoc(Path toolRoot, Path msBuild) {
         super("RoslynatorLoc", toolRoot);
-        this.msBuild = msBuild;
+        this.msBuild = Paths.get(PiqueProperties.getProperties().getProperty("msbuild.roslynator"));
+        //this.msBuild = msBuild;
     }
 
 
@@ -70,7 +73,7 @@ public class RoslynatorLoc extends RoslynatorTool implements ITool {
         }
 
         // Strings for CLI call
-        String tool = getExecutable().toAbsolutePath().toString();
+        String tool = PiqueProperties.getProperties().getProperty("roslynator.tool.root");
         String command = "loc";
         String msBuild = "--msbuild-path=" + this.msBuild.toString();
         String target = path.toString();
@@ -101,13 +104,27 @@ public class RoslynatorLoc extends RoslynatorTool implements ITool {
             throw new RuntimeException("Roslynator.analyze() did not generate a results file in the expected location");
         }
 
+       /* String toolPath = PiqueProperties.getProperties().getProperty("roslynator.tool.root");
+
+        String[] cmd = {toolPath,
+                "loc", "--msbuild-path=" + PiqueProperties.getProperties().getProperty("msbuild.bin"),
+                path.toString(), ">", tempResults.toString()};
+
+        try {
+            helperFunctions.getOutputFromProgram(cmd,true);
+
+        } catch (IOException  e) {
+            e.printStackTrace();
+        }*/
+
         return tempResults.toPath();
     }
 
 
     @Override
     public Path initialize(Path path) {
-        return roslynatorInitializeToTempFolder();
+        //return roslynatorInitializeToTempFolder();
+        return null;
     }
 
 
