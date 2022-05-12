@@ -38,21 +38,21 @@ Finally, the `src/main/java/piquecsharpsec/runnable/SingleProjectEvaluator.java`
 
 ### Downloads
 - Step 1: Download [msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar](https://github.com/MSUSEL/msusel-pique-csharp-sec/blob/main/target/msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar) into a directory that contains the project needed to be analyzed.
-- Step 2: Download [pique-csharp-sec.properties](https://github.com/MSUSEL/msusel-pique-csharp-sec/blob/main/src/main/resources/pique-csharp-sec.properties) into a directory that contains the project needed to be analyzed.
-- Step 3: Download [full-pique-csharp-sec_description.json](https://github.com/MSUSEL/msusel-pique-csharp-sec/blob/main/src/main/resources/full-pique-csharp-sec_description.json) into a directory that contains the project needed to be analyzed.
-- Step 4: Download [csharp-opensource](https://github.com/MSUSEL/benchmarks/tree/main/csharp-opensource) benchmark repository into a directory that contains the project needed to be analyzed.
+- Step 2: Download [csharp-opensource](https://github.com/MSUSEL/benchmarks/tree/main/csharp-opensource) benchmark repository into a directory that contains the project needed to be analyzed (we have provided the ``bench-csharp-combo`` benchmark repository for quick testing as it only contains three projects).
+- Step 3: Include the project needed to be analyzed into the directory (we have provided the ``choco`` project in the directory that can be used if you do not have a project to be analyzed and just want to test the jar file).
 
-### Installation
-- Step 5: Install the tool Security Code Scan by opening the shell/command line and running the command given [here](https://www.nuget.org/packages/security-scan/).
+### Included in v1.0 Zip File
+- The [pique-csharp-sec.properties](https://github.com/MSUSEL/msusel-pique-csharp-sec/blob/main/src/main/resources/pique-csharp-sec.properties) file is already included in the directory.
+- The [full-pique-csharp-sec_description.json](https://github.com/MSUSEL/msusel-pique-csharp-sec/blob/main/src/main/resources/full-pique-csharp-sec_description.json) file is already included in the directory.
 
 ### Pointers
-- Step 6: Point project.root= to your desired project in pique-csharp-sec.properties file.
-- Step 7: Point benchmark.repo= to your desired benchmark repository (csharp-opensource) in pique-properties.properties file.
+- Step 4: Point project.root= to your desired project in pique-csharp-sec.properties file.
+- Step 5: Point benchmark.repo= to your desired benchmark repository (csharp-opensource) in pique-csharp-sec.properties file.
 
 ### Run
-- Step 8 (Model Derivaton): run `java -jar msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar -d` to derive a derived model.
-- Step 9 (Project Evaluator): run `java -jar msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar -e` to evaluate.
-- Step 10: Find the evaluated result file in /out directory.
+- Step 6 (Model Derivaton): run `java -jar msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar -d` to derive a derived model.
+- Step 7 (Project Evaluator): run `java -jar msusel-pique-csharp-sec-0.0.1-jar-with-dependencies.jar -e` to evaluate.
+- Step 8: Find the evaluated result file in /out directory.
 
 ## Notes
 Currently, we have not done testing to ensure that this will run on Linux or Mac. Additionally, a space in the path at any point appears to break the system, so if you are running into trouble that could be the cause.
